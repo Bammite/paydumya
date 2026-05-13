@@ -1,0 +1,1672 @@
+
+[2025-12-13 02:59:17] GestionCommandePayDunya - POST reçu
+DATA: Array
+(
+    [tel] => +221781941351
+    [code] => 
+    [paiement] => Orange Money
+    [deliveryLocation] => campus
+    [chambre] => ff
+    [position] => 
+    [deliveryTimeOption] => asap
+    [jourLivraison] => 
+    [comments] => 
+    [form] => 3
+    [idP] => 
+    [cart] => [{"id":"52-13","name":"Tacos Mexicains var - Tacos Mexicains var1","quantity":3,"price":100,"restaurantId":1,"restaurantName":"restoTest","image":"http://localhost/Third_ren/uploads/foodImage/23e85799-67c4-4065-98fe-49c82bad5e40_69239880b20aa6.59697809.jpg"}]
+)
+
+-----------------------------------
+[2025-12-13 02:59:17] Données extraites - tel: '+221781941351', paiement: 'Orange Money', secteur: 'campus'
+DATA: Array
+(
+)
+
+-----------------------------------
+[2025-12-13 02:59:17] Étape 4: Tentative de paiement via processPaymentPayDunya...
+-----------------------------------
+[2025-12-13 02:59:17] Méthode paiement - Original: 'Orange Money', Normalisé: 'orange_money'
+DATA: Array
+(
+)
+
+-----------------------------------
+[2025-12-13 02:59:17] Avant appel processPaymentPayDunya
+DATA: Array
+(
+    [numeroTel] => +221781941351
+    [phoneNumberFormatted] => +221781941351
+    [customerName] => test001
+    [totalCommande] => 300
+    [normalizedPaymentMethod] => orange_money
+)
+
+-----------------------------------
+[2025-12-13 02:59:17] processPaymentPayDunya appelé avec:
+DATA: Array
+(
+    [phoneNumber] => +221781941351
+    [customerName] => test001
+    [amount] => 300
+    [paymentMethod] => orange_money
+    [actionUrls] => Array
+        (
+            [callback_url] => https://sanarois.com/php/callback.php
+            [return_url] => https://sanarois.com/index.html?payment_status=success&order_code=PANIER-5202BF
+            [cancel_url] => https://sanarois.com/index.html?payment_status=cancelled&order_code=PANIER-5202BF
+        )
+
+)
+
+-----------------------------------
+[2025-12-13 02:59:17] Étape 1: Tentative de création de facture PayDunya...
+-----------------------------------
+[2025-12-13 02:59:18] Réponse PayDunya (Création Facture) - Code HTTP: 200
+DATA: Array
+(
+    [response_code] => 00
+    [response_text] => https://paydunya.com/checkout/invoice/Y08wZ8JPPBFkaU03VGfM
+    [description] => Checkout Invoice Created.
+    [token] => Y08wZ8JPPBFkaU03VGfM
+)
+
+-----------------------------------
+[2025-12-13 02:59:18] Étape 2: Tentative de paiement Softpay...
+-----------------------------------
+[2025-12-13 02:59:18] Données de paiement envoyées à l'API Softpay
+DATA: Array
+(
+    [invoice_token] => Y08wZ8JPPBFkaU03VGfM
+    [customer_name] => test001
+    [phone_number] => 781941351
+    [total_amount] => 300
+)
+
+-----------------------------------
+[2025-12-13 02:59:18] Utilisation de l'URL Softpay pour Orange_money: https://app.paydunya.com/api/v1/softpay/new-orange-money-senegal
+-----------------------------------
+[2025-12-13 02:59:19] Réponse PayDunya (Paiement Softpay) - Code HTTP: 422
+DATA: Array
+(
+    [success] => 
+    [message] => Désolé, le paiement n'a pas pu être effectué! Veuillez réssayer plus tard!
+)
+
+-----------------------------------
+[2025-12-13 02:59:19] ÉCHEC: Le paiement a été refusé ou la réponse API est invalide.
+-----------------------------------
+[2025-12-13 02:59:19] Détails de l'échec - httpCode: 422, paymentResult:
+DATA: Array
+(
+    [success] => 
+    [message] => Désolé, le paiement n'a pas pu être effectué! Veuillez réssayer plus tard!
+)
+
+-----------------------------------
+[2025-12-13 02:59:19] Après appel processPaymentPayDunya - Résultat
+DATA: Array
+(
+    [success] => 
+    [message] => Le paiement a échoué.
+)
+
+-----------------------------------
+[2025-12-13 03:01:15] store_pending_order - Données reçues
+DATA: Array
+(
+    [tel] => +221781941351
+    [code] => 
+    [paiement] => Orange Money
+    [deliveryLocation] => campus
+    [chambre] => gg
+    [position] => 
+    [deliveryTimeOption] => asap
+    [jourLivraison] => 
+    [comments] => 
+    [form] => 3
+    [idP] => 
+    [cart] => [{"id":"52-13","name":"Tacos Mexicains var - Tacos Mexicains var1","quantity":3,"price":100,"restaurantId":1,"restaurantName":"restoTest","image":"http://localhost/Third_ren/uploads/foodImage/23e85799-67c4-4065-98fe-49c82bad5e40_69239880b20aa6.59697809.jpg"}]
+)
+
+-----------------------------------
+[2025-12-13 03:01:15] Appel processPaymentPayDunya pour paiement initial
+DATA: Array
+(
+    [phone] => +221781941351
+    [amount] => 300
+    [method] => orange_money
+)
+
+-----------------------------------
+[2025-12-13 03:01:15] processPaymentPayDunya appelé avec:
+DATA: Array
+(
+    [phoneNumber] => +221781941351
+    [customerName] => test001
+    [amount] => 300
+    [paymentMethod] => orange_money
+    [actionUrls] => Array
+        (
+            [callback_url] => https://sanarois.com/php/confirm_payment.php
+            [return_url] => https://sanarois.com/gestionDePaiement/confirm_payment.php?order_code=PANIER-B34754
+            [cancel_url] => https://sanarois.com/index.html?payment_status=cancelled&order_code=PANIER-B34754
+        )
+
+)
+
+-----------------------------------
+[2025-12-13 03:01:15] Étape 1: Tentative de création de facture PayDunya...
+-----------------------------------
+[2025-12-13 03:01:16] Réponse PayDunya (Création Facture) - Code HTTP: 200
+DATA: Array
+(
+    [response_code] => 00
+    [response_text] => https://paydunya.com/checkout/invoice/nkhWfsRyPAzjwt45prKh
+    [description] => Checkout Invoice Created.
+    [token] => nkhWfsRyPAzjwt45prKh
+)
+
+-----------------------------------
+[2025-12-13 03:01:16] Étape 2: Tentative de paiement Softpay...
+-----------------------------------
+[2025-12-13 03:01:16] Données de paiement envoyées à l'API Softpay
+DATA: Array
+(
+    [invoice_token] => nkhWfsRyPAzjwt45prKh
+    [customer_name] => test001
+    [phone_number] => 781941351
+    [total_amount] => 300
+)
+
+-----------------------------------
+[2025-12-13 03:01:16] Utilisation de l'URL Softpay pour Orange_money: https://app.paydunya.com/api/v1/softpay/new-orange-money-senegal
+-----------------------------------
+[2025-12-13 03:01:17] Réponse PayDunya (Paiement Softpay) - Code HTTP: 422
+DATA: Array
+(
+    [success] => 
+    [message] => Désolé, le paiement n'a pas pu être effectué! Veuillez réssayer plus tard!
+)
+
+-----------------------------------
+[2025-12-13 03:01:17] ÉCHEC: Le paiement a été refusé ou la réponse API est invalide.
+-----------------------------------
+[2025-12-13 03:01:17] Détails de l'échec - httpCode: 422, paymentResult:
+DATA: Array
+(
+    [success] => 
+    [message] => Désolé, le paiement n'a pas pu être effectué! Veuillez réssayer plus tard!
+)
+
+-----------------------------------
+[2025-12-13 03:01:17] ERREUR store_pending_order: Le paiement a échoué.
+-----------------------------------
+[2025-12-13 03:01:28] store_pending_order - Données reçues
+DATA: Array
+(
+    [tel] => +221781941351
+    [code] => 
+    [paiement] => Wave
+    [deliveryLocation] => campus
+    [chambre] => gg
+    [position] => 
+    [deliveryTimeOption] => asap
+    [jourLivraison] => 
+    [comments] => 
+    [form] => 3
+    [idP] => 
+    [cart] => [{"id":"52-13","name":"Tacos Mexicains var - Tacos Mexicains var1","quantity":3,"price":100,"restaurantId":1,"restaurantName":"restoTest","image":"http://localhost/Third_ren/uploads/foodImage/23e85799-67c4-4065-98fe-49c82bad5e40_69239880b20aa6.59697809.jpg"}]
+)
+
+-----------------------------------
+[2025-12-13 03:01:28] Appel processPaymentPayDunya pour paiement initial
+DATA: Array
+(
+    [phone] => +221781941351
+    [amount] => 300
+    [method] => wave
+)
+
+-----------------------------------
+[2025-12-13 03:01:28] processPaymentPayDunya appelé avec:
+DATA: Array
+(
+    [phoneNumber] => +221781941351
+    [customerName] => test001
+    [amount] => 300
+    [paymentMethod] => wave
+    [actionUrls] => Array
+        (
+            [callback_url] => https://sanarois.com/php/confirm_payment.php
+            [return_url] => https://sanarois.com/gestionDePaiement/confirm_payment.php?order_code=PANIER-81C52D
+            [cancel_url] => https://sanarois.com/index.html?payment_status=cancelled&order_code=PANIER-81C52D
+        )
+
+)
+
+-----------------------------------
+[2025-12-13 03:01:28] Étape 1: Tentative de création de facture PayDunya...
+-----------------------------------
+[2025-12-13 03:01:28] Réponse PayDunya (Création Facture) - Code HTTP: 200
+DATA: Array
+(
+    [response_code] => 00
+    [response_text] => https://paydunya.com/checkout/invoice/XzTIzqwINiF7fT3IXX29
+    [description] => Checkout Invoice Created.
+    [token] => XzTIzqwINiF7fT3IXX29
+)
+
+-----------------------------------
+[2025-12-13 03:01:28] Étape 2: Tentative de paiement Softpay...
+-----------------------------------
+[2025-12-13 03:01:28] Données de paiement envoyées à l'API Softpay
+DATA: Array
+(
+    [wave_senegal_payment_token] => XzTIzqwINiF7fT3IXX29
+    [wave_senegal_email] => test@gmail.com
+    [wave_senegal_fullName] => test001
+    [wave_senegal_phone] => 781941351
+    [total_amount] => 300
+)
+
+-----------------------------------
+[2025-12-13 03:01:28] Utilisation de l'URL Softpay pour Wave: https://app.paydunya.com/api/v1/softpay/wave-senegal
+-----------------------------------
+[2025-12-13 03:01:29] Réponse PayDunya (Paiement Softpay) - Code HTTP: 200
+DATA: Array
+(
+    [success] => 1
+    [message] => Rediriger vers cette URL pour completer le paiement.
+    [url] => https://pay.wave.com/c/cos-21qretns01vpw?a=300&c=XOF&m=attic%20%2A%20DDP%20
+)
+
+-----------------------------------
+[2025-12-13 03:01:29] SUCCÈS: Paiement accepté.
+-----------------------------------
+[2025-12-13 03:01:29] Données de réponse réussie
+DATA: Array
+(
+    [success] => 1
+    [message] => Rediriger vers cette URL pour completer le paiement.
+    [url] => https://pay.wave.com/c/cos-21qretns01vpw?a=300&c=XOF&m=attic%20%2A%20DDP%20
+)
+
+-----------------------------------
+[2025-12-13 03:01:29] ERREUR store_pending_order: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'u263270964_fastfoodsanaro.commandes_en_attente' doesn't exist
+-----------------------------------
+[2025-12-13 03:01:42] store_pending_order - Données reçues
+DATA: Array
+(
+    [tel] => +221781941351
+    [code] => 
+    [paiement] => Orange Money
+    [deliveryLocation] => campus
+    [chambre] => gg
+    [position] => 
+    [deliveryTimeOption] => asap
+    [jourLivraison] => 
+    [comments] => 
+    [form] => 3
+    [idP] => 
+    [cart] => [{"id":"52-13","name":"Tacos Mexicains var - Tacos Mexicains var1","quantity":3,"price":100,"restaurantId":1,"restaurantName":"restoTest","image":"http://localhost/Third_ren/uploads/foodImage/23e85799-67c4-4065-98fe-49c82bad5e40_69239880b20aa6.59697809.jpg"}]
+)
+
+-----------------------------------
+[2025-12-13 03:01:42] Appel processPaymentPayDunya pour paiement initial
+DATA: Array
+(
+    [phone] => +221781941351
+    [amount] => 300
+    [method] => orange_money
+)
+
+-----------------------------------
+[2025-12-13 03:01:42] processPaymentPayDunya appelé avec:
+DATA: Array
+(
+    [phoneNumber] => +221781941351
+    [customerName] => test001
+    [amount] => 300
+    [paymentMethod] => orange_money
+    [actionUrls] => Array
+        (
+            [callback_url] => https://sanarois.com/php/confirm_payment.php
+            [return_url] => https://sanarois.com/gestionDePaiement/confirm_payment.php?order_code=PANIER-65EE00
+            [cancel_url] => https://sanarois.com/index.html?payment_status=cancelled&order_code=PANIER-65EE00
+        )
+
+)
+
+-----------------------------------
+[2025-12-13 03:01:42] Étape 1: Tentative de création de facture PayDunya...
+-----------------------------------
+[2025-12-13 03:01:43] Réponse PayDunya (Création Facture) - Code HTTP: 200
+DATA: Array
+(
+    [response_code] => 00
+    [response_text] => https://paydunya.com/checkout/invoice/Eu5f9H6aMBN84qurVSES
+    [description] => Checkout Invoice Created.
+    [token] => Eu5f9H6aMBN84qurVSES
+)
+
+-----------------------------------
+[2025-12-13 03:01:43] Étape 2: Tentative de paiement Softpay...
+-----------------------------------
+[2025-12-13 03:01:43] Données de paiement envoyées à l'API Softpay
+DATA: Array
+(
+    [invoice_token] => Eu5f9H6aMBN84qurVSES
+    [customer_name] => test001
+    [phone_number] => 781941351
+    [total_amount] => 300
+)
+
+-----------------------------------
+[2025-12-13 03:01:43] Utilisation de l'URL Softpay pour Orange_money: https://app.paydunya.com/api/v1/softpay/new-orange-money-senegal
+-----------------------------------
+[2025-12-13 03:01:44] Réponse PayDunya (Paiement Softpay) - Code HTTP: 422
+DATA: Array
+(
+    [success] => 
+    [message] => Désolé, le paiement n'a pas pu être effectué! Veuillez réssayer plus tard!
+)
+
+-----------------------------------
+[2025-12-13 03:01:44] ÉCHEC: Le paiement a été refusé ou la réponse API est invalide.
+-----------------------------------
+[2025-12-13 03:01:44] Détails de l'échec - httpCode: 422, paymentResult:
+DATA: Array
+(
+    [success] => 
+    [message] => Désolé, le paiement n'a pas pu être effectué! Veuillez réssayer plus tard!
+)
+
+-----------------------------------
+[2025-12-13 03:01:44] ERREUR store_pending_order: Le paiement a échoué.
+-----------------------------------
+[2026-05-03 16:54:22] Appel API PayDunya
+DATA: Array
+(
+    [url] => https://app.paydunya.com/api/v1/checkout-invoice/create
+    [payload] => Array
+        (
+            [invoice] => Array
+                (
+                    [total_amount] => 1000
+                    [description] => Paiement via PayDunya
+                )
+
+            [store] => Array
+                (
+                    [name] => Sanarois Fast-Food
+                )
+
+            [actions] => Array
+                (
+                    [callback_url] => https://sanarois.com/paydumya/gestionDePaiement/callback.php
+                    [return_url] => https://sanarois.com/paydumya/gestionDePaiement/confirm_payment.php
+                    [cancel_url] => https://sanarois.com/paydumya/gestionDePaiement/confirm_payment.php?status=cancelled
+                )
+
+        )
+
+)
+
+-----------------------------------
+[2026-05-03 16:54:22] Erreur cURL PayDunya
+DATA: Array
+(
+    [url] => https://app.paydunya.com/api/v1/checkout-invoice/create
+    [error] => Couldn't resolve host 'app.paydunya.com'
+)
+
+-----------------------------------
+[2026-05-03 16:55:23] Appel API PayDunya
+DATA: Array
+(
+    [url] => https://app.paydunya.com/api/v1/checkout-invoice/create
+    [payload] => Array
+        (
+            [invoice] => Array
+                (
+                    [total_amount] => 1000
+                    [description] => Paiement via PayDunya
+                )
+
+            [store] => Array
+                (
+                    [name] => Sanarois Fast-Food
+                )
+
+            [actions] => Array
+                (
+                    [callback_url] => https://sanarois.com/paydumya/gestionDePaiement/callback.php
+                    [return_url] => https://sanarois.com/paydumya/gestionDePaiement/confirm_payment.php
+                    [cancel_url] => https://sanarois.com/paydumya/gestionDePaiement/confirm_payment.php?status=cancelled
+                )
+
+        )
+
+)
+
+-----------------------------------
+[2026-05-03 16:55:24] Réponse API PayDunya
+DATA: Array
+(
+    [url] => https://app.paydunya.com/api/v1/checkout-invoice/create
+    [http_code] => 200
+    [response] => Array
+        (
+            [response_code] => 00
+            [response_text] => https://paydunya.com/checkout/invoice/vM0Cl1jxuJImO7RdazJh
+            [description] => Checkout Invoice Created.
+            [token] => vM0Cl1jxuJImO7RdazJh
+        )
+
+)
+
+-----------------------------------
+[2026-05-03 16:55:24] Appel API PayDunya
+DATA: Array
+(
+    [url] => https://app.paydunya.com/api/v1/softpay/wave-senegal
+    [payload] => Array
+        (
+            [wave_senegal_fullName] => test001
+            [wave_senegal_email] => client@example.com
+            [wave_senegal_phone] => 781941351
+            [wave_senegal_payment_token] => vM0Cl1jxuJImO7RdazJh
+            [total_amount] => 1000
+        )
+
+)
+
+-----------------------------------
+[2026-05-03 16:55:24] Réponse API PayDunya
+DATA: Array
+(
+    [url] => https://app.paydunya.com/api/v1/softpay/wave-senegal
+    [http_code] => 200
+    [response] => Array
+        (
+            [success] => 1
+            [message] => Rediriger vers cette URL pour completer le paiement.
+            [url] => https://pay.wave.com/c/cos-24jw1ebx81phj?a=1000&c=XOF&m=attic%20%2A%20DDP%20
+        )
+
+)
+
+-----------------------------------
+[2026-05-03 16:55:49] Appel API PayDunya
+DATA: Array
+(
+    [url] => https://app.paydunya.com/api/v1/checkout-invoice/create
+    [payload] => Array
+        (
+            [invoice] => Array
+                (
+                    [total_amount] => 1000
+                    [description] => Paiement via PayDunya
+                )
+
+            [store] => Array
+                (
+                    [name] => Sanarois Fast-Food
+                )
+
+            [actions] => Array
+                (
+                    [callback_url] => https://sanarois.com/paydumya/gestionDePaiement/callback.php
+                    [return_url] => https://sanarois.com/paydumya/gestionDePaiement/confirm_payment.php
+                    [cancel_url] => https://sanarois.com/paydumya/gestionDePaiement/confirm_payment.php?status=cancelled
+                )
+
+        )
+
+)
+
+-----------------------------------
+[2026-05-03 16:55:50] Réponse API PayDunya
+DATA: Array
+(
+    [url] => https://app.paydunya.com/api/v1/checkout-invoice/create
+    [http_code] => 200
+    [response] => Array
+        (
+            [response_code] => 00
+            [response_text] => https://paydunya.com/checkout/invoice/uvOivD26Lzd9z7dwn2vC
+            [description] => Checkout Invoice Created.
+            [token] => uvOivD26Lzd9z7dwn2vC
+        )
+
+)
+
+-----------------------------------
+[2026-05-03 16:55:50] Appel API PayDunya
+DATA: Array
+(
+    [url] => https://app.paydunya.com/api/v1/softpay/wave-senegal
+    [payload] => Array
+        (
+            [wave_senegal_fullName] => test001
+            [wave_senegal_email] => client@example.com
+            [wave_senegal_phone] => 781941351
+            [wave_senegal_payment_token] => uvOivD26Lzd9z7dwn2vC
+            [total_amount] => 1000
+        )
+
+)
+
+-----------------------------------
+[2026-05-03 16:55:50] Réponse API PayDunya
+DATA: Array
+(
+    [url] => https://app.paydunya.com/api/v1/softpay/wave-senegal
+    [http_code] => 200
+    [response] => Array
+        (
+            [success] => 1
+            [message] => Rediriger vers cette URL pour completer le paiement.
+            [url] => https://pay.wave.com/c/cos-24jw1mqz81r0m?a=1000&c=XOF&m=attic%20%2A%20DDP%20
+        )
+
+)
+
+-----------------------------------
+[2026-05-03 16:55:50] Appel API PayDunya
+DATA: Array
+(
+    [url] => https://app.paydunya.com/api/v1/checkout-invoice/create
+    [payload] => Array
+        (
+            [invoice] => Array
+                (
+                    [total_amount] => 1000
+                    [description] => Paiement via PayDunya
+                )
+
+            [store] => Array
+                (
+                    [name] => Sanarois Fast-Food
+                )
+
+            [actions] => Array
+                (
+                    [callback_url] => https://sanarois.com/paydumya/gestionDePaiement/callback.php
+                    [return_url] => https://sanarois.com/paydumya/gestionDePaiement/confirm_payment.php
+                    [cancel_url] => https://sanarois.com/paydumya/gestionDePaiement/confirm_payment.php?status=cancelled
+                )
+
+        )
+
+)
+
+-----------------------------------
+[2026-05-03 16:55:51] Réponse API PayDunya
+DATA: Array
+(
+    [url] => https://app.paydunya.com/api/v1/checkout-invoice/create
+    [http_code] => 200
+    [response] => Array
+        (
+            [response_code] => 00
+            [response_text] => https://paydunya.com/checkout/invoice/rAUvYTvaKEuW4ObZi5Vb
+            [description] => Checkout Invoice Created.
+            [token] => rAUvYTvaKEuW4ObZi5Vb
+        )
+
+)
+
+-----------------------------------
+[2026-05-03 16:55:51] Appel API PayDunya
+DATA: Array
+(
+    [url] => https://app.paydunya.com/api/v1/softpay/wave-senegal
+    [payload] => Array
+        (
+            [wave_senegal_fullName] => test001
+            [wave_senegal_email] => client@example.com
+            [wave_senegal_phone] => 781941351
+            [wave_senegal_payment_token] => rAUvYTvaKEuW4ObZi5Vb
+            [total_amount] => 1000
+        )
+
+)
+
+-----------------------------------
+[2026-05-03 16:55:51] Réponse API PayDunya
+DATA: Array
+(
+    [url] => https://app.paydunya.com/api/v1/softpay/wave-senegal
+    [http_code] => 200
+    [response] => Array
+        (
+            [success] => 1
+            [message] => Rediriger vers cette URL pour completer le paiement.
+            [url] => https://pay.wave.com/c/cos-24jw1n0xr1r34?a=1000&c=XOF&m=attic%20%2A%20DDP%20
+        )
+
+)
+
+-----------------------------------
+[2026-05-03 16:55:51] Appel API PayDunya
+DATA: Array
+(
+    [url] => https://app.paydunya.com/api/v1/checkout-invoice/create
+    [payload] => Array
+        (
+            [invoice] => Array
+                (
+                    [total_amount] => 1000
+                    [description] => Paiement via PayDunya
+                )
+
+            [store] => Array
+                (
+                    [name] => Sanarois Fast-Food
+                )
+
+            [actions] => Array
+                (
+                    [callback_url] => https://sanarois.com/paydumya/gestionDePaiement/callback.php
+                    [return_url] => https://sanarois.com/paydumya/gestionDePaiement/confirm_payment.php
+                    [cancel_url] => https://sanarois.com/paydumya/gestionDePaiement/confirm_payment.php?status=cancelled
+                )
+
+        )
+
+)
+
+-----------------------------------
+[2026-05-03 16:55:52] Réponse API PayDunya
+DATA: Array
+(
+    [url] => https://app.paydunya.com/api/v1/checkout-invoice/create
+    [http_code] => 200
+    [response] => Array
+        (
+            [response_code] => 00
+            [response_text] => https://paydunya.com/checkout/invoice/Qa7Np58IXFFJddNyoxvq
+            [description] => Checkout Invoice Created.
+            [token] => Qa7Np58IXFFJddNyoxvq
+        )
+
+)
+
+-----------------------------------
+[2026-05-03 16:55:52] Appel API PayDunya
+DATA: Array
+(
+    [url] => https://app.paydunya.com/api/v1/softpay/wave-senegal
+    [payload] => Array
+        (
+            [wave_senegal_fullName] => test001
+            [wave_senegal_email] => client@example.com
+            [wave_senegal_phone] => 781941351
+            [wave_senegal_payment_token] => Qa7Np58IXFFJddNyoxvq
+            [total_amount] => 1000
+        )
+
+)
+
+-----------------------------------
+[2026-05-03 16:55:52] Réponse API PayDunya
+DATA: Array
+(
+    [url] => https://app.paydunya.com/api/v1/softpay/wave-senegal
+    [http_code] => 200
+    [response] => Array
+        (
+            [success] => 1
+            [message] => Rediriger vers cette URL pour completer le paiement.
+            [url] => https://pay.wave.com/c/cos-24jw1n6dg1r4e?a=1000&c=XOF&m=attic%20%2A%20DDP%20
+        )
+
+)
+
+-----------------------------------
+[2026-05-03 16:55:52] Appel API PayDunya
+DATA: Array
+(
+    [url] => https://app.paydunya.com/api/v1/checkout-invoice/create
+    [payload] => Array
+        (
+            [invoice] => Array
+                (
+                    [total_amount] => 1000
+                    [description] => Paiement via PayDunya
+                )
+
+            [store] => Array
+                (
+                    [name] => Sanarois Fast-Food
+                )
+
+            [actions] => Array
+                (
+                    [callback_url] => https://sanarois.com/paydumya/gestionDePaiement/callback.php
+                    [return_url] => https://sanarois.com/paydumya/gestionDePaiement/confirm_payment.php
+                    [cancel_url] => https://sanarois.com/paydumya/gestionDePaiement/confirm_payment.php?status=cancelled
+                )
+
+        )
+
+)
+
+-----------------------------------
+[2026-05-03 16:55:52] Réponse API PayDunya
+DATA: Array
+(
+    [url] => https://app.paydunya.com/api/v1/checkout-invoice/create
+    [http_code] => 200
+    [response] => Array
+        (
+            [response_code] => 00
+            [response_text] => https://paydunya.com/checkout/invoice/vc9lZrTMiJDdEO79Z0Xv
+            [description] => Checkout Invoice Created.
+            [token] => vc9lZrTMiJDdEO79Z0Xv
+        )
+
+)
+
+-----------------------------------
+[2026-05-03 16:55:52] Appel API PayDunya
+DATA: Array
+(
+    [url] => https://app.paydunya.com/api/v1/softpay/wave-senegal
+    [payload] => Array
+        (
+            [wave_senegal_fullName] => test001
+            [wave_senegal_email] => client@example.com
+            [wave_senegal_phone] => 781941351
+            [wave_senegal_payment_token] => vc9lZrTMiJDdEO79Z0Xv
+            [total_amount] => 1000
+        )
+
+)
+
+-----------------------------------
+[2026-05-03 16:55:53] Réponse API PayDunya
+DATA: Array
+(
+    [url] => https://app.paydunya.com/api/v1/softpay/wave-senegal
+    [http_code] => 200
+    [response] => Array
+        (
+            [success] => 1
+            [message] => Rediriger vers cette URL pour completer le paiement.
+            [url] => https://pay.wave.com/c/cos-24jw1ne301r6j?a=1000&c=XOF&m=attic%20%2A%20DDP%20
+        )
+
+)
+
+-----------------------------------
+[2026-05-03 16:55:53] Appel API PayDunya
+DATA: Array
+(
+    [url] => https://app.paydunya.com/api/v1/checkout-invoice/create
+    [payload] => Array
+        (
+            [invoice] => Array
+                (
+                    [total_amount] => 1000
+                    [description] => Paiement via PayDunya
+                )
+
+            [store] => Array
+                (
+                    [name] => Sanarois Fast-Food
+                )
+
+            [actions] => Array
+                (
+                    [callback_url] => https://sanarois.com/paydumya/gestionDePaiement/callback.php
+                    [return_url] => https://sanarois.com/paydumya/gestionDePaiement/confirm_payment.php
+                    [cancel_url] => https://sanarois.com/paydumya/gestionDePaiement/confirm_payment.php?status=cancelled
+                )
+
+        )
+
+)
+
+-----------------------------------
+[2026-05-03 16:55:53] Réponse API PayDunya
+DATA: Array
+(
+    [url] => https://app.paydunya.com/api/v1/checkout-invoice/create
+    [http_code] => 200
+    [response] => Array
+        (
+            [response_code] => 00
+            [response_text] => https://paydunya.com/checkout/invoice/OzAKAWozpmbDFu3sQekh
+            [description] => Checkout Invoice Created.
+            [token] => OzAKAWozpmbDFu3sQekh
+        )
+
+)
+
+-----------------------------------
+[2026-05-03 16:55:53] Appel API PayDunya
+DATA: Array
+(
+    [url] => https://app.paydunya.com/api/v1/softpay/wave-senegal
+    [payload] => Array
+        (
+            [wave_senegal_fullName] => test001
+            [wave_senegal_email] => client@example.com
+            [wave_senegal_phone] => 781941351
+            [wave_senegal_payment_token] => OzAKAWozpmbDFu3sQekh
+            [total_amount] => 1000
+        )
+
+)
+
+-----------------------------------
+[2026-05-03 16:55:53] Réponse API PayDunya
+DATA: Array
+(
+    [url] => https://app.paydunya.com/api/v1/softpay/wave-senegal
+    [http_code] => 200
+    [response] => Array
+        (
+            [success] => 1
+            [message] => Rediriger vers cette URL pour completer le paiement.
+            [url] => https://pay.wave.com/c/cos-24jw1nkk01r84?a=1000&c=XOF&m=attic%20%2A%20DDP%20
+        )
+
+)
+
+-----------------------------------
+[2026-05-03 16:55:54] Appel API PayDunya
+DATA: Array
+(
+    [url] => https://app.paydunya.com/api/v1/checkout-invoice/create
+    [payload] => Array
+        (
+            [invoice] => Array
+                (
+                    [total_amount] => 1000
+                    [description] => Paiement via PayDunya
+                )
+
+            [store] => Array
+                (
+                    [name] => Sanarois Fast-Food
+                )
+
+            [actions] => Array
+                (
+                    [callback_url] => https://sanarois.com/paydumya/gestionDePaiement/callback.php
+                    [return_url] => https://sanarois.com/paydumya/gestionDePaiement/confirm_payment.php
+                    [cancel_url] => https://sanarois.com/paydumya/gestionDePaiement/confirm_payment.php?status=cancelled
+                )
+
+        )
+
+)
+
+-----------------------------------
+[2026-05-03 16:55:54] Réponse API PayDunya
+DATA: Array
+(
+    [url] => https://app.paydunya.com/api/v1/checkout-invoice/create
+    [http_code] => 200
+    [response] => Array
+        (
+            [response_code] => 00
+            [response_text] => https://paydunya.com/checkout/invoice/8iVh9siSJzCzdXU5cIYJ
+            [description] => Checkout Invoice Created.
+            [token] => 8iVh9siSJzCzdXU5cIYJ
+        )
+
+)
+
+-----------------------------------
+[2026-05-03 16:55:54] Appel API PayDunya
+DATA: Array
+(
+    [url] => https://app.paydunya.com/api/v1/softpay/wave-senegal
+    [payload] => Array
+        (
+            [wave_senegal_fullName] => test001
+            [wave_senegal_email] => client@example.com
+            [wave_senegal_phone] => 781941351
+            [wave_senegal_payment_token] => 8iVh9siSJzCzdXU5cIYJ
+            [total_amount] => 1000
+        )
+
+)
+
+-----------------------------------
+[2026-05-03 16:55:54] Réponse API PayDunya
+DATA: Array
+(
+    [url] => https://app.paydunya.com/api/v1/softpay/wave-senegal
+    [http_code] => 200
+    [response] => Array
+        (
+            [success] => 1
+            [message] => Rediriger vers cette URL pour completer le paiement.
+            [url] => https://pay.wave.com/c/cos-24jw1ns401r9g?a=1000&c=XOF&m=attic%20%2A%20DDP%20
+        )
+
+)
+
+-----------------------------------
+[2026-05-03 16:55:54] Appel API PayDunya
+DATA: Array
+(
+    [url] => https://app.paydunya.com/api/v1/checkout-invoice/create
+    [payload] => Array
+        (
+            [invoice] => Array
+                (
+                    [total_amount] => 1000
+                    [description] => Paiement via PayDunya
+                )
+
+            [store] => Array
+                (
+                    [name] => Sanarois Fast-Food
+                )
+
+            [actions] => Array
+                (
+                    [callback_url] => https://sanarois.com/paydumya/gestionDePaiement/callback.php
+                    [return_url] => https://sanarois.com/paydumya/gestionDePaiement/confirm_payment.php
+                    [cancel_url] => https://sanarois.com/paydumya/gestionDePaiement/confirm_payment.php?status=cancelled
+                )
+
+        )
+
+)
+
+-----------------------------------
+[2026-05-03 16:55:55] Réponse API PayDunya
+DATA: Array
+(
+    [url] => https://app.paydunya.com/api/v1/checkout-invoice/create
+    [http_code] => 200
+    [response] => Array
+        (
+            [response_code] => 00
+            [response_text] => https://paydunya.com/checkout/invoice/6UfttLkqhLaU88gR8JtF
+            [description] => Checkout Invoice Created.
+            [token] => 6UfttLkqhLaU88gR8JtF
+        )
+
+)
+
+-----------------------------------
+[2026-05-03 16:55:55] Appel API PayDunya
+DATA: Array
+(
+    [url] => https://app.paydunya.com/api/v1/softpay/wave-senegal
+    [payload] => Array
+        (
+            [wave_senegal_fullName] => test001
+            [wave_senegal_email] => client@example.com
+            [wave_senegal_phone] => 781941351
+            [wave_senegal_payment_token] => 6UfttLkqhLaU88gR8JtF
+            [total_amount] => 1000
+        )
+
+)
+
+-----------------------------------
+[2026-05-03 16:55:55] Réponse API PayDunya
+DATA: Array
+(
+    [url] => https://app.paydunya.com/api/v1/softpay/wave-senegal
+    [http_code] => 200
+    [response] => Array
+        (
+            [success] => 1
+            [message] => Rediriger vers cette URL pour completer le paiement.
+            [url] => https://pay.wave.com/c/cos-24jw1nyf01rap?a=1000&c=XOF&m=attic%20%2A%20DDP%20
+        )
+
+)
+
+-----------------------------------
+[2026-05-03 16:55:55] Appel API PayDunya
+DATA: Array
+(
+    [url] => https://app.paydunya.com/api/v1/checkout-invoice/create
+    [payload] => Array
+        (
+            [invoice] => Array
+                (
+                    [total_amount] => 1000
+                    [description] => Paiement via PayDunya
+                )
+
+            [store] => Array
+                (
+                    [name] => Sanarois Fast-Food
+                )
+
+            [actions] => Array
+                (
+                    [callback_url] => https://sanarois.com/paydumya/gestionDePaiement/callback.php
+                    [return_url] => https://sanarois.com/paydumya/gestionDePaiement/confirm_payment.php
+                    [cancel_url] => https://sanarois.com/paydumya/gestionDePaiement/confirm_payment.php?status=cancelled
+                )
+
+        )
+
+)
+
+-----------------------------------
+[2026-05-03 16:55:55] Réponse API PayDunya
+DATA: Array
+(
+    [url] => https://app.paydunya.com/api/v1/checkout-invoice/create
+    [http_code] => 200
+    [response] => Array
+        (
+            [response_code] => 00
+            [response_text] => https://paydunya.com/checkout/invoice/RhvO3YFa54FIxpRttu6p
+            [description] => Checkout Invoice Created.
+            [token] => RhvO3YFa54FIxpRttu6p
+        )
+
+)
+
+-----------------------------------
+[2026-05-03 16:55:55] Appel API PayDunya
+DATA: Array
+(
+    [url] => https://app.paydunya.com/api/v1/softpay/wave-senegal
+    [payload] => Array
+        (
+            [wave_senegal_fullName] => test001
+            [wave_senegal_email] => client@example.com
+            [wave_senegal_phone] => 781941351
+            [wave_senegal_payment_token] => RhvO3YFa54FIxpRttu6p
+            [total_amount] => 1000
+        )
+
+)
+
+-----------------------------------
+[2026-05-03 16:55:56] Réponse API PayDunya
+DATA: Array
+(
+    [url] => https://app.paydunya.com/api/v1/softpay/wave-senegal
+    [http_code] => 200
+    [response] => Array
+        (
+            [success] => 1
+            [message] => Rediriger vers cette URL pour completer le paiement.
+            [url] => https://pay.wave.com/c/cos-24jw1p42g1rby?a=1000&c=XOF&m=attic%20%2A%20DDP%20
+        )
+
+)
+
+-----------------------------------
+[2026-05-09 02:21:01] Appel API PayDunya
+DATA: Array
+(
+    [url] => https://app.paydunya.com/api/v1/checkout-invoice/create
+    [payload] => Array
+        (
+            [invoice] => Array
+                (
+                    [total_amount] => 1000
+                    [description] => debug wave
+                )
+
+            [store] => Array
+                (
+                    [name] => Sanarois Fast-Food
+                )
+
+            [actions] => Array
+                (
+                    [callback_url] => https://sanarois.com/paydumya/gestionDePaiement/callback.php
+                    [return_url] => https://sanarois.com/paydumya/gestionDePaiement/confirm_payment.php
+                    [cancel_url] => https://sanarois.com/paydumya/gestionDePaiement/confirm_payment.php?status=cancelled
+                )
+
+        )
+
+)
+
+-----------------------------------
+[2026-05-09 02:21:02] Réponse API PayDunya
+DATA: Array
+(
+    [url] => https://app.paydunya.com/api/v1/checkout-invoice/create
+    [http_code] => 200
+    [response] => Array
+        (
+            [response_code] => 00
+            [response_text] => https://paydunya.com/checkout/invoice/cRtAAVpOY0lAKg9iaskK
+            [description] => Checkout Invoice Created.
+            [token] => cRtAAVpOY0lAKg9iaskK
+        )
+
+)
+
+-----------------------------------
+[2026-05-09 02:21:02] Appel API PayDunya
+DATA: Array
+(
+    [url] => https://app.paydunya.com/api/v1/softpay/wave-senegal
+    [payload] => Array
+        (
+            [wave_senegal_fullName] => test001
+            [wave_senegal_email] => client@sanarois.com
+            [wave_senegal_phone] => 781941351
+            [wave_senegal_payment_token] => cRtAAVpOY0lAKg9iaskK
+            [total_amount] => 1000
+        )
+
+)
+
+-----------------------------------
+[2026-05-09 02:21:02] Réponse API PayDunya
+DATA: Array
+(
+    [url] => https://app.paydunya.com/api/v1/softpay/wave-senegal
+    [http_code] => 200
+    [response] => Array
+        (
+            [success] => 1
+            [message] => Rediriger vers cette URL pour completer le paiement.
+            [url] => https://pay.wave.com/c/cos-24pb48e2r1hyr?a=1000&c=XOF&m=attic%20%2A%20DDP%20
+        )
+
+)
+
+-----------------------------------
+[2026-05-09 02:21:20] Appel API PayDunya
+DATA: Array
+(
+    [url] => https://app.paydunya.com/api/v1/checkout-invoice/create
+    [payload] => Array
+        (
+            [invoice] => Array
+                (
+                    [total_amount] => 1000
+                    [description] => debug wave email
+                )
+
+            [store] => Array
+                (
+                    [name] => Sanarois Fast-Food
+                )
+
+            [actions] => Array
+                (
+                    [callback_url] => https://sanarois.com/paydumya/gestionDePaiement/callback.php
+                    [return_url] => https://sanarois.com/paydumya/gestionDePaiement/confirm_payment.php
+                    [cancel_url] => https://sanarois.com/paydumya/gestionDePaiement/confirm_payment.php?status=cancelled
+                )
+
+        )
+
+)
+
+-----------------------------------
+[2026-05-09 02:21:20] Réponse API PayDunya
+DATA: Array
+(
+    [url] => https://app.paydunya.com/api/v1/checkout-invoice/create
+    [http_code] => 200
+    [response] => Array
+        (
+            [response_code] => 00
+            [response_text] => https://paydunya.com/checkout/invoice/ToEe2a0cP4bh4HEvOv9F
+            [description] => Checkout Invoice Created.
+            [token] => ToEe2a0cP4bh4HEvOv9F
+        )
+
+)
+
+-----------------------------------
+[2026-05-09 02:21:20] Appel API PayDunya
+DATA: Array
+(
+    [url] => https://app.paydunya.com/api/v1/softpay/wave-senegal
+    [payload] => Array
+        (
+            [wave_senegal_fullName] => test001
+            [wave_senegal_email] => client@example.com
+            [wave_senegal_phone] => 781941351
+            [wave_senegal_payment_token] => ToEe2a0cP4bh4HEvOv9F
+            [total_amount] => 1000
+        )
+
+)
+
+-----------------------------------
+[2026-05-09 02:21:20] Réponse API PayDunya
+DATA: Array
+(
+    [url] => https://app.paydunya.com/api/v1/softpay/wave-senegal
+    [http_code] => 200
+    [response] => Array
+        (
+            [success] => 1
+            [message] => Rediriger vers cette URL pour completer le paiement.
+            [url] => https://pay.wave.com/c/cos-24pb4cy2r1jm2?a=1000&c=XOF&m=attic%20%2A%20DDP%20
+        )
+
+)
+
+-----------------------------------
+[2026-05-09 02:21:20] Appel API PayDunya
+DATA: Array
+(
+    [url] => https://app.paydunya.com/api/v1/checkout-invoice/create
+    [payload] => Array
+        (
+            [invoice] => Array
+                (
+                    [total_amount] => 1000
+                    [description] => debug wave email2
+                )
+
+            [store] => Array
+                (
+                    [name] => Sanarois Fast-Food
+                )
+
+            [actions] => Array
+                (
+                    [callback_url] => https://sanarois.com/paydumya/gestionDePaiement/callback.php
+                    [return_url] => https://sanarois.com/paydumya/gestionDePaiement/confirm_payment.php
+                    [cancel_url] => https://sanarois.com/paydumya/gestionDePaiement/confirm_payment.php?status=cancelled
+                )
+
+        )
+
+)
+
+-----------------------------------
+[2026-05-09 02:21:21] Réponse API PayDunya
+DATA: Array
+(
+    [url] => https://app.paydunya.com/api/v1/checkout-invoice/create
+    [http_code] => 200
+    [response] => Array
+        (
+            [response_code] => 00
+            [response_text] => https://paydunya.com/checkout/invoice/JrYz69PzWPFnnPqToq6T
+            [description] => Checkout Invoice Created.
+            [token] => JrYz69PzWPFnnPqToq6T
+        )
+
+)
+
+-----------------------------------
+[2026-05-09 02:21:21] Appel API PayDunya
+DATA: Array
+(
+    [url] => https://app.paydunya.com/api/v1/softpay/wave-senegal
+    [payload] => Array
+        (
+            [wave_senegal_fullName] => test001
+            [wave_senegal_email] => client@sanarois.com
+            [wave_senegal_phone] => 781941351
+            [wave_senegal_payment_token] => JrYz69PzWPFnnPqToq6T
+            [total_amount] => 1000
+        )
+
+)
+
+-----------------------------------
+[2026-05-09 02:21:21] Réponse API PayDunya
+DATA: Array
+(
+    [url] => https://app.paydunya.com/api/v1/softpay/wave-senegal
+    [http_code] => 200
+    [response] => Array
+        (
+            [success] => 1
+            [message] => Rediriger vers cette URL pour completer le paiement.
+            [url] => https://pay.wave.com/c/cos-24pb4d1w81jmp?a=1000&c=XOF&m=attic%20%2A%20DDP%20
+        )
+
+)
+
+-----------------------------------
+[2026-05-09 02:22:29] Appel API PayDunya
+DATA: Array
+(
+    [url] => https://app.paydunya.com/api/v1/checkout-invoice/create
+    [payload] => Array
+        (
+            [invoice] => Array
+                (
+                    [total_amount] => 1000
+                    [description] => Paiement via PayDunya
+                )
+
+            [store] => Array
+                (
+                    [name] => Sanarois Fast-Food
+                )
+
+            [actions] => Array
+                (
+                    [callback_url] => https://sanarois.com/paydumya/gestionDePaiement/callback.php
+                    [return_url] => https://sanarois.com/paydumya/gestionDePaiement/confirm_payment.php
+                    [cancel_url] => https://sanarois.com/paydumya/gestionDePaiement/confirm_payment.php?status=cancelled
+                )
+
+        )
+
+)
+
+-----------------------------------
+[2026-05-09 02:22:29] Réponse API PayDunya
+DATA: Array
+(
+    [url] => https://app.paydunya.com/api/v1/checkout-invoice/create
+    [http_code] => 200
+    [response] => Array
+        (
+            [response_code] => 00
+            [response_text] => https://paydunya.com/checkout/invoice/WAv5Bfmct7X9qush6svs
+            [description] => Checkout Invoice Created.
+            [token] => WAv5Bfmct7X9qush6svs
+        )
+
+)
+
+-----------------------------------
+[2026-05-09 02:22:29] Appel API PayDunya
+DATA: Array
+(
+    [url] => https://app.paydunya.com/api/v1/softpay/wave-senegal
+    [payload] => Array
+        (
+            [wave_senegal_fullName] => test001
+            [wave_senegal_email] => client@example.com
+            [wave_senegal_phone] => 781941351
+            [wave_senegal_payment_token] => WAv5Bfmct7X9qush6svs
+            [total_amount] => 1000
+        )
+
+)
+
+-----------------------------------
+[2026-05-09 02:22:30] Réponse API PayDunya
+DATA: Array
+(
+    [url] => https://app.paydunya.com/api/v1/softpay/wave-senegal
+    [http_code] => 200
+    [response] => Array
+        (
+            [success] => 1
+            [message] => Rediriger vers cette URL pour completer le paiement.
+            [url] => https://pay.wave.com/c/cos-24pb4xwg01n1g?a=1000&c=XOF&m=attic%20%2A%20DDP%20
+        )
+
+)
+
+-----------------------------------
+[2026-05-09 02:22:49] Appel API PayDunya
+DATA: Array
+(
+    [url] => https://app.paydunya.com/api/v1/checkout-invoice/create
+    [payload] => Array
+        (
+            [invoice] => Array
+                (
+                    [total_amount] => 1000
+                    [description] => Paiement via PayDunya
+                )
+
+            [store] => Array
+                (
+                    [name] => Sanarois Fast-Food
+                )
+
+            [actions] => Array
+                (
+                    [callback_url] => http://localhost/Projet_Php/public_html/paydumya/gestionDePaiement/callback.php
+                    [return_url] => http://localhost/Projet_Php/public_html/paydumya/gestionDePaiement/confirm_payment.php
+                    [cancel_url] => http://localhost/Projet_Php/public_html/paydumya/gestionDePaiement/confirm_payment.php?status=cancelled
+                )
+
+        )
+
+)
+
+-----------------------------------
+[2026-05-09 02:22:50] Réponse API PayDunya
+DATA: Array
+(
+    [url] => https://app.paydunya.com/api/v1/checkout-invoice/create
+    [http_code] => 200
+    [response] => Array
+        (
+            [response_code] => 00
+            [response_text] => https://paydunya.com/checkout/invoice/ro4pDz9qt7NB7gglmgDe
+            [description] => Checkout Invoice Created.
+            [token] => ro4pDz9qt7NB7gglmgDe
+        )
+
+)
+
+-----------------------------------
+[2026-05-09 02:22:50] Appel API PayDunya
+DATA: Array
+(
+    [url] => https://app.paydunya.com/api/v1/softpay/wave-senegal
+    [payload] => Array
+        (
+            [wave_senegal_fullName] => test001
+            [wave_senegal_email] => client@example.com
+            [wave_senegal_phone] => 781941351
+            [wave_senegal_payment_token] => ro4pDz9qt7NB7gglmgDe
+            [total_amount] => 1000
+        )
+
+)
+
+-----------------------------------
+[2026-05-09 02:22:50] Réponse API PayDunya
+DATA: Array
+(
+    [url] => https://app.paydunya.com/api/v1/softpay/wave-senegal
+    [http_code] => 200
+    [response] => Array
+        (
+            [success] => 
+            [message] => Une erreur est survenue au niveau du serveur
+        )
+
+)
+
+-----------------------------------
+[2026-05-09 02:22:50] Wave direct a retourne une erreur transitoire, retry automatique
+DATA: Array
+(
+    [http_code] => 200
+    [message] => Une erreur est survenue au niveau du serveur
+)
+
+-----------------------------------
+[2026-05-09 02:22:51] Appel API PayDunya
+DATA: Array
+(
+    [url] => https://app.paydunya.com/api/v1/softpay/wave-senegal
+    [payload] => Array
+        (
+            [wave_senegal_fullName] => test001
+            [wave_senegal_email] => client@example.com
+            [wave_senegal_phone] => 781941351
+            [wave_senegal_payment_token] => ro4pDz9qt7NB7gglmgDe
+            [total_amount] => 1000
+        )
+
+)
+
+-----------------------------------
+[2026-05-09 02:22:51] Réponse API PayDunya
+DATA: Array
+(
+    [url] => https://app.paydunya.com/api/v1/softpay/wave-senegal
+    [http_code] => 403
+    [response] => Array
+        (
+            [success] => 
+            [message] => Ce paiement a dejà été initié.
+        )
+
+)
+
+-----------------------------------
+[2026-05-12 15:43:08] Configuration PayDunya chargée
+DATA: Array
+(
+    [MASTER_KEY] => ******
+    [PRIVATE_KEY] => ******
+    [TOKEN] => ******
+    [BASE_URL] => https://app.paydunya.com/api/v1
+    [CHECKOUT_URL] => https://app.paydunya.com/api/v1/checkout-invoice/create
+    [PUBLIC_BASE_URL] => https://sanarois.com/paydumya
+    [CALLBACK_URL] => https://sanarois.com/paydumya/gestionDePaiement/callback.php
+    [RETURN_URL] => https://sanarois.com/paydumya/gestionDePaiement/confirm_payment.php
+    [CANCEL_URL] => https://sanarois.com/paydumya/gestionDePaiement/confirm_payment.php?status=cancelled
+)
+
+-----------------------------------
+[2026-05-12 15:58:00] Nouvelle requête process_payment
+DATA: Array
+(
+    [mode] => create_invoice
+    [request] => Array
+        (
+            [mode] => create_invoice
+            [amount] => 0
+        )
+
+)
+
+-----------------------------------
+[2026-05-12 15:58:08] Configuration PayDunya chargée
+DATA: Array
+(
+    [MASTER_KEY] => ******
+    [PRIVATE_KEY] => ******
+    [TOKEN] => ******
+    [BASE_URL] => https://app.paydunya.com/api/v1
+    [CHECKOUT_URL] => https://app.paydunya.com/api/v1/checkout-invoice/create
+    [PUBLIC_BASE_URL] => https://sanarois.com/paydumya
+    [CALLBACK_URL] => https://sanarois.com/paydumya/gestionDePaiement/callback.php
+    [RETURN_URL] => https://sanarois.com/paydumya/gestionDePaiement/confirm_payment.php
+    [CANCEL_URL] => https://sanarois.com/paydumya/gestionDePaiement/confirm_payment.php?status=cancelled
+)
+
+-----------------------------------
+[2026-05-12 15:58:18] Configuration PayDunya chargée
+DATA: Array
+(
+    [MASTER_KEY] => ******
+    [PRIVATE_KEY] => ******
+    [TOKEN] => ******
+    [BASE_URL] => https://app.paydunya.com/api/v1
+    [CHECKOUT_URL] => https://app.paydunya.com/api/v1/checkout-invoice/create
+    [PUBLIC_BASE_URL] => https://sanarois.com/paydumya
+    [CALLBACK_URL] => https://sanarois.com/paydumya/gestionDePaiement/callback.php
+    [RETURN_URL] => https://sanarois.com/paydumya/gestionDePaiement/confirm_payment.php
+    [CANCEL_URL] => https://sanarois.com/paydumya/gestionDePaiement/confirm_payment.php?status=cancelled
+)
+
+-----------------------------------
+[2026-05-12 15:58:18] URL d'action refusée (hors domaine autorisé ou non HTTPS).
+DATA: Array
+(
+    [key] => callback_url
+    [value] => http://evil.com/x
+)
+
+-----------------------------------
+[2026-05-12 15:59:57] Configuration PayDunya chargée
+DATA: Array
+(
+    [MASTER_KEY] => ******
+    [PRIVATE_KEY] => ******
+    [TOKEN] => ******
+    [BASE_URL] => https://app.paydunya.com/api/v1
+    [CHECKOUT_URL] => https://app.paydunya.com/api/v1/checkout-invoice/create
+    [PUBLIC_BASE_URL] => https://sanarois.com/paydumya
+    [CALLBACK_URL] => https://sanarois.com/paydumya/gestionDePaiement/callback.php
+    [RETURN_URL] => https://sanarois.com/paydumya/gestionDePaiement/confirm_payment.php
+    [CANCEL_URL] => https://sanarois.com/paydumya/gestionDePaiement/confirm_payment.php?status=cancelled
+)
+
+-----------------------------------
+[2026-05-12 16:00:06] Configuration PayDunya chargée
+DATA: Array
+(
+    [MASTER_KEY] => ******
+    [PRIVATE_KEY] => ******
+    [TOKEN] => ******
+    [BASE_URL] => https://app.paydunya.com/api/v1
+    [CHECKOUT_URL] => https://app.paydunya.com/api/v1/checkout-invoice/create
+    [PUBLIC_BASE_URL] => https://sanarois.com/paydumya
+    [CALLBACK_URL] => https://sanarois.com/paydumya/gestionDePaiement/callback.php
+    [RETURN_URL] => https://sanarois.com/paydumya/gestionDePaiement/confirm_payment.php
+    [CANCEL_URL] => https://sanarois.com/paydumya/gestionDePaiement/confirm_payment.php?status=cancelled
+)
+
+-----------------------------------
+[2026-05-12 16:35:49] Configuration PayDunya chargée
+DATA: Array
+(
+    [MASTER_KEY] => ******
+    [PRIVATE_KEY] => ******
+    [TOKEN] => ******
+    [BASE_URL] => https://app.paydunya.com/api/v1
+    [CHECKOUT_URL] => https://app.paydunya.com/api/v1/checkout-invoice/create
+    [PUBLIC_BASE_URL] => https://sanarois.com/paydumya
+    [CALLBACK_URL] => https://sanarois.com/paydumya/gestionDePaiement/callback.php
+    [RETURN_URL] => https://sanarois.com/paydumya/gestionDePaiement/confirm_payment.php
+    [CANCEL_URL] => https://sanarois.com/paydumya/gestionDePaiement/confirm_payment.php?status=cancelled
+)
+
+-----------------------------------
+[2026-05-12 16:35:49] Appel API PayDunya
+DATA: Array
+(
+    [url] => https://app.paydunya.com/api/v1/checkout-invoice/create
+    [payload] => Array
+        (
+            [invoice] => Array
+                (
+                    [total_amount] => 1000
+                    [description] => Paiement initié via endpoint simplifié
+                )
+
+            [store] => Array
+                (
+                    [name] => Sanarois Fast-Food
+                )
+
+            [actions] => Array
+                (
+                    [callback_url] => https://sanarois.com/paydumya/gestionDePaiement/callback.php
+                    [return_url] => https://sanarois.com/paydumya/gestionDePaiement/confirm_payment.php
+                    [cancel_url] => https://sanarois.com/paydumya/gestionDePaiement/confirm_payment.php?status=cancelled
+                )
+
+        )
+
+)
+
+-----------------------------------
+[2026-05-12 16:35:49] Erreur cURL PayDunya
+DATA: Array
+(
+    [url] => https://app.paydunya.com/api/v1/checkout-invoice/create
+    [error] => Couldn't resolve host 'app.paydunya.com'
+)
+
+-----------------------------------

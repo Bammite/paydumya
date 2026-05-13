@@ -1,0 +1,551 @@
+[2025-12-11 03:00:35] Nouvelle requête reçue.
+-----------------------------------
+[2025-12-11 03:00:35] Étape 1: Données reçues du formulaire
+DATA: Array
+(
+    [name] => ATTIC_TEST
+    [phone_number] => +221781941351
+    [amount] => 1000
+)
+
+-----------------------------------
+[2025-12-11 03:00:35] Étape 2: Tentative de création de facture PayDunya...
+-----------------------------------
+[2025-12-11 03:00:36] Réponse PayDunya (Création Facture) - Code HTTP: 200
+DATA: Array
+(
+    [response_code] => 00
+    [response_text] => https://paydunya.com/sandbox-checkout/invoice/test_OOeowoXa4z
+    [description] => Checkout Invoice Created.
+    [token] => test_OOeowoXa4z
+)
+
+-----------------------------------
+[2025-12-11 03:00:36] Succès: Facture créée. Token récupéré: test_OOeowoXa4z
+-----------------------------------
+[2025-12-11 03:00:36] Étape 3: Tentative de paiement Softpay...
+-----------------------------------
+[2025-12-11 03:00:36] Envoi des données de paiement (Softpay)
+DATA: Array
+(
+    [phone_number] => +221781941351
+    [customer_email] => princebammite@gmail.com
+    [password] => ****** (MASQUÉ)
+    [invoice_token] => test_OOeowoXa4z
+)
+
+-----------------------------------
+[2025-12-11 03:00:36] Réponse PayDunya (Paiement Softpay) - Code HTTP: 404
+-----------------------------------
+[2025-12-11 03:00:36] ÉCHEC FINAL: Le paiement a été refusé ou a échoué.
+-----------------------------------
+[2025-12-11 03:36:12] Nouvelle requête reçue.
+-----------------------------------
+[2025-12-11 03:36:12] Étape 1: Données reçues du formulaire
+DATA: Array
+(
+    [name] => ATTIC_TEST
+    [phone_number] => +221781941351
+    [amount] => 1000
+)
+
+-----------------------------------
+[2025-12-11 03:36:12] Étape 2: Tentative de création de facture PayDunya...
+-----------------------------------
+[2025-12-11 03:36:12] Réponse PayDunya (Création Facture) - Code HTTP: 200
+DATA: Array
+(
+    [response_code] => 00
+    [response_text] => https://paydunya.com/sandbox-checkout/invoice/test_IvGFICzVSW
+    [description] => Checkout Invoice Created.
+    [token] => test_IvGFICzVSW
+)
+
+-----------------------------------
+[2025-12-11 03:36:12] Succès: Facture créée. Token récupéré: test_IvGFICzVSW
+-----------------------------------
+[2025-12-11 03:36:12] Étape 3: Tentative de paiement Softpay...
+-----------------------------------
+[2025-12-11 03:36:12] Envoi des données de paiement (Softpay)
+DATA: Array
+(
+    [phone_number] => +221781941351
+    [customer_email] => princebammite@gmail.com
+    [password] => ****** (MASQUÉ)
+    [invoice_token] => test_IvGFICzVSW
+)
+
+-----------------------------------
+[2025-12-11 03:36:13] Réponse PayDunya (Paiement Softpay) - Code HTTP: 404
+-----------------------------------
+[2025-12-11 03:36:13] ÉCHEC FINAL: Le paiement a été refusé ou a échoué.
+-----------------------------------
+[2025-12-11 03:39:59] Nouvelle requête reçue.
+-----------------------------------
+[2025-12-11 03:39:59] Étape 1: Données reçues du formulaire
+DATA: Array
+(
+    [name] => test001
+    [phone_number] => +221781941351
+    [amount] => 1000
+)
+
+-----------------------------------
+[2025-12-11 03:39:59] Étape 2: Tentative de création de facture PayDunya...
+-----------------------------------
+[2025-12-11 03:39:59] Réponse PayDunya (Création Facture) - Code HTTP: 200
+DATA: Array
+(
+    [response_code] => 00
+    [response_text] => https://paydunya.com/sandbox-checkout/invoice/test_ymA9VO0y7P
+    [description] => Checkout Invoice Created.
+    [token] => test_ymA9VO0y7P
+)
+
+-----------------------------------
+[2025-12-11 03:39:59] Succès: Facture créée. Token récupéré: test_ymA9VO0y7P
+-----------------------------------
+[2025-12-11 03:39:59] Étape 3: Tentative de paiement Softpay...
+-----------------------------------
+[2025-12-11 03:39:59] Envoi des données de paiement (Softpay)
+DATA: Array
+(
+    [phone_number] => +221781941351
+    [customer_email] => princebammite@gmail.com
+    [password] => ****** (MASQUÉ)
+    [invoice_token] => test_ymA9VO0y7P
+)
+
+-----------------------------------
+[2025-12-11 03:39:59] Réponse PayDunya (Paiement Softpay) - Code HTTP: 404
+-----------------------------------
+[2025-12-11 03:39:59] ÉCHEC FINAL: Le paiement a été refusé ou a échoué.
+-----------------------------------
+[2025-12-11 03:40:10] Nouvelle requête reçue.
+-----------------------------------
+[2025-12-11 03:40:10] Étape 1: Données reçues du formulaire
+DATA: Array
+(
+    [name] => test001
+    [phone_number] => +221781941351
+    [amount] => 1000
+)
+
+-----------------------------------
+[2025-12-11 03:40:10] Étape 2: Tentative de création de facture PayDunya...
+-----------------------------------
+[2025-12-11 03:40:10] Réponse PayDunya (Création Facture) - Code HTTP: 200
+DATA: Array
+(
+    [response_code] => 00
+    [response_text] => https://paydunya.com/sandbox-checkout/invoice/test_Pyr9aI4GKt
+    [description] => Checkout Invoice Created.
+    [token] => test_Pyr9aI4GKt
+)
+
+-----------------------------------
+[2025-12-11 03:40:10] Succès: Facture créée. Token récupéré: test_Pyr9aI4GKt
+-----------------------------------
+[2025-12-11 03:40:10] Étape 3: Tentative de paiement Softpay...
+-----------------------------------
+[2025-12-11 03:40:10] Envoi des données de paiement (Softpay)
+DATA: Array
+(
+    [phone_number] => +221781941351
+    [customer_email] => princebammite@gmail.com
+    [password] => ****** (MASQUÉ)
+    [invoice_token] => test_Pyr9aI4GKt
+)
+
+-----------------------------------
+[2025-12-11 03:40:10] Réponse PayDunya (Paiement Softpay) - Code HTTP: 404
+-----------------------------------
+[2025-12-11 03:40:10] ÉCHEC FINAL: Le paiement a été refusé ou a échoué.
+-----------------------------------
+[2025-12-11 03:40:16] Nouvelle requête reçue.
+-----------------------------------
+[2025-12-11 03:40:16] Étape 1: Données reçues du formulaire
+DATA: Array
+(
+    [name] => test001
+    [phone_number] => +221781941351
+    [amount] => 1000
+)
+
+-----------------------------------
+[2025-12-11 03:40:16] Étape 2: Tentative de création de facture PayDunya...
+-----------------------------------
+[2025-12-11 03:40:16] Réponse PayDunya (Création Facture) - Code HTTP: 200
+DATA: Array
+(
+    [response_code] => 00
+    [response_text] => https://paydunya.com/sandbox-checkout/invoice/test_1BxNelBaOG
+    [description] => Checkout Invoice Created.
+    [token] => test_1BxNelBaOG
+)
+
+-----------------------------------
+[2025-12-11 03:40:16] Succès: Facture créée. Token récupéré: test_1BxNelBaOG
+-----------------------------------
+[2025-12-11 03:40:16] Étape 3: Tentative de paiement Softpay...
+-----------------------------------
+[2025-12-11 03:40:16] Envoi des données de paiement (Softpay)
+DATA: Array
+(
+    [phone_number] => +221781941351
+    [customer_email] => princebammite@gmail.com
+    [password] => ****** (MASQUÉ)
+    [invoice_token] => test_1BxNelBaOG
+)
+
+-----------------------------------
+[2025-12-11 03:40:16] Réponse PayDunya (Paiement Softpay) - Code HTTP: 404
+-----------------------------------
+[2025-12-11 03:40:16] ÉCHEC FINAL: Le paiement a été refusé ou a échoué.
+-----------------------------------
+[2025-12-11 03:41:33] Nouvelle requête reçue.
+-----------------------------------
+[2025-12-11 03:41:33] Étape 1: Données reçues du formulaire
+DATA: Array
+(
+    [name] => test001
+    [phone_number] => +221781941351
+    [amount] => 1000
+)
+
+-----------------------------------
+[2025-12-11 03:41:33] Étape 2: Tentative de création de facture PayDunya...
+-----------------------------------
+[2025-12-11 03:41:33] Réponse PayDunya (Création Facture) - Code HTTP: 200
+DATA: Array
+(
+    [response_code] => 00
+    [response_text] => https://paydunya.com/sandbox-checkout/invoice/test_UAEKmKSZQk
+    [description] => Checkout Invoice Created.
+    [token] => test_UAEKmKSZQk
+)
+
+-----------------------------------
+[2025-12-11 03:41:33] Étape 3: Tentative de paiement Softpay...
+-----------------------------------
+[2025-12-11 03:41:33] Réponse PayDunya (Paiement Softpay) - Code HTTP: 404
+DATA: <!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Page non trouvée | PayDunya</title>
+
+  <!-- Favicon -->
+  <link rel="apple-icon" sizes="57x57" href="https://app.paydunya.com/assets/img/brand/pD_favicon/apple-icon-57x57.png">
+<link rel="apple-icon" sizes="60x60" href="https://app.paydunya.com/assets/img/brand/pD_favicon/apple-icon-60x60.png">
+<link rel="apple-icon" sizes="72x72" href="https://app.paydunya.com/assets/img/brand/pD_favicon/apple-icon-72x72.png">
+<link rel="apple-icon" sizes="76x76" href="https://app.paydunya.com/assets/img/brand/pD_favicon/apple-icon-76x76.png">
+<link rel="apple-icon" sizes="114x114" href="https://app.paydunya.com/assets/img/brand/pD_favicon/apple-icon-114x114.png">
+<link rel="apple-icon" sizes="120x120" href="https://app.paydunya.com/assets/img/brand/pD_favicon/apple-icon-120x120.png">
+<link rel="apple-icon" sizes="144x144" href="https://app.paydunya.com/assets/img/brand/pD_favicon/apple-icon-144x144.png">
+<link rel="apple-icon" sizes="152x152" href="https://app.paydunya.com/assets/img/brand/pD_favicon/apple-icon-152x152.png">
+<link rel="apple-icon" sizes="180x180" href="https://app.paydunya.com/assets/img/brand/pD_favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" href="https://app.paydunya.com/assets/img/brand/pD_favicon/favicon-96x96.png" sizes="96x96">
+<link rel="manifest" href="https://app.paydunya.com/assets/img/brand/pD_favicon/manifest.json">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="csrf-token" content="">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta name="keywords" content="Paiement, paiement en ligne, Sénégal, Plateforme de paiement en ligne Afrique, Paiement Sénégal, Passerelle de paiement en ligne, PayDunya, PAYDUNYA, paydunya, paydunya.com, Marchand en ligne, payment gateway, payment gateway Africa, online payment gateway, mobile payments, best payment gateway, orange money, paydunia, paydounia, paiement en ligne au Sénégal, paiement sur internet en Afrique, mobile money en Afrique, mobile payment en Afrique, online payment en Afrique, pay online, secure payment, PSP, Payment Service Provider en Afrique, ecommerce, ebusiness, startup,  paiement e-service, PDS, paiement sécurisé, gateway online, epayment gateway, epayment, mpayment, programme paydunya secure, entreprise en ligne, solution de paiement en ligne,  paiement marketplace, monnaie électronique en ligne, API, clic and pay, CnP, DmP, demande de paiement, TFA, transfert automatique, accepter paiement sur site web">
+  <meta name="description" content="Effectuez vos achats de biens et services sur Internet depuis votre t&eacute;l&eacute;phone mobile sur tous les sites acceptant PAYDUNYA.">
+  <meta property="og:image" content="https://app.paydunya.com/images/branding/logo_paydunya_128x128.png">
+  <meta property="og:url" content="https://app.paydunya.com/sandbox-api/v1/softpay/checkout/make-payment">
+  <meta property="fb:type" content="website">
+  <meta property="og:site_name" content="PAYDUNYA">
+  <meta property="og:title" content="Solution de paiement en ligne simple et s&eacute;curis&eacute;e">
+  <meta property="og:description" content="Effectuez vos achats de biens et services sur Internet depuis votre t&eacute;l&eacute;phone mobile sur tous les sites acceptant PAYDUNYA.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Solution de paiement en ligne simple et s&eacute;curis&eacute;e">
+  <meta name="twitter:description" content="Effectuez vos achats de biens et services sur Internet depuis votre t&eacute;l&eacute;phone mobile sur tous les sites acceptant PAYDUNYA.">
+  <meta name="twitter:image:src" content="https://app.paydunya.com/images/branding/logo_paydunya_128x128.png">
+  <meta name="twitter:site" content="@paydunya">
+  <meta name="twitter:creator" content="@paydunya">
+  <meta name="twitter:url" content="https://app.paydunya.com/sandbox-api/v1/softpay/checkout/make-payment">
+
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <!-- Vendor CSS Files -->
+  <link href="https://app.paydunya.com/css/404.css" rel="stylesheet">
+<body>
+
+  <section id="hero" class="d-flex align-items-center">
+
+    <div class="container d-flex flex-column align-items-center justify-content-center" data-aos="fade-up">
+      <img src="https://app.paydunya.com/svg/404.svg" class="img-fluid hero-img" alt="" data-aos="zoom-in" data-aos-delay="150">
+      <h3>Ooups, La page n&#039;a pas &eacute;t&eacute; trouv&eacute;e</h3>
+      <p>
+        Nous sommes vraiment d&eacute;sol&eacute;s pour ce d&eacute;sagr&eacute;ment. Il semble que vous 
+          essayez d&#039;acc&eacute;der &agrave; une page qui a &eacute;t&eacute; supprim&eacute;e ou qui n&#039;a jamais exist&eacute;.
+      </p>
+        <a href="https://app.paydunya.com" class="btn-get-started">Revenir à la page précédente</a>
+    </div>
+
+  </section>
+
+</body>
+
+</html>
+-----------------------------------
+[2025-12-11 03:41:33] ÉCHEC FINAL: Le paiement a été refusé ou la réponse API est invalide.
+-----------------------------------
+[2025-12-11 03:41:54] Nouvelle requête reçue.
+-----------------------------------
+[2025-12-11 03:41:54] Étape 1: Données reçues du formulaire
+DATA: Array
+(
+    [name] => test001
+    [phone_number] => +221781941351
+    [amount] => 1000
+)
+
+-----------------------------------
+[2025-12-11 03:41:54] Étape 2: Tentative de création de facture PayDunya...
+-----------------------------------
+[2025-12-11 03:41:54] Réponse PayDunya (Création Facture) - Code HTTP: 200
+DATA: Array
+(
+    [response_code] => 00
+    [response_text] => https://paydunya.com/sandbox-checkout/invoice/test_Fdzw8T3miS
+    [description] => Checkout Invoice Created.
+    [token] => test_Fdzw8T3miS
+)
+
+-----------------------------------
+[2025-12-11 03:41:54] Étape 3: Tentative de paiement Softpay...
+-----------------------------------
+[2025-12-11 03:41:54] Réponse PayDunya (Paiement Softpay) - Code HTTP: 404
+DATA: <!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Page non trouvée | PayDunya</title>
+
+  <!-- Favicon -->
+  <link rel="apple-icon" sizes="57x57" href="https://app.paydunya.com/assets/img/brand/pD_favicon/apple-icon-57x57.png">
+<link rel="apple-icon" sizes="60x60" href="https://app.paydunya.com/assets/img/brand/pD_favicon/apple-icon-60x60.png">
+<link rel="apple-icon" sizes="72x72" href="https://app.paydunya.com/assets/img/brand/pD_favicon/apple-icon-72x72.png">
+<link rel="apple-icon" sizes="76x76" href="https://app.paydunya.com/assets/img/brand/pD_favicon/apple-icon-76x76.png">
+<link rel="apple-icon" sizes="114x114" href="https://app.paydunya.com/assets/img/brand/pD_favicon/apple-icon-114x114.png">
+<link rel="apple-icon" sizes="120x120" href="https://app.paydunya.com/assets/img/brand/pD_favicon/apple-icon-120x120.png">
+<link rel="apple-icon" sizes="144x144" href="https://app.paydunya.com/assets/img/brand/pD_favicon/apple-icon-144x144.png">
+<link rel="apple-icon" sizes="152x152" href="https://app.paydunya.com/assets/img/brand/pD_favicon/apple-icon-152x152.png">
+<link rel="apple-icon" sizes="180x180" href="https://app.paydunya.com/assets/img/brand/pD_favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" href="https://app.paydunya.com/assets/img/brand/pD_favicon/favicon-96x96.png" sizes="96x96">
+<link rel="manifest" href="https://app.paydunya.com/assets/img/brand/pD_favicon/manifest.json">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="csrf-token" content="">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <meta name="keywords" content="Paiement, paiement en ligne, Sénégal, Plateforme de paiement en ligne Afrique, Paiement Sénégal, Passerelle de paiement en ligne, PayDunya, PAYDUNYA, paydunya, paydunya.com, Marchand en ligne, payment gateway, payment gateway Africa, online payment gateway, mobile payments, best payment gateway, orange money, paydunia, paydounia, paiement en ligne au Sénégal, paiement sur internet en Afrique, mobile money en Afrique, mobile payment en Afrique, online payment en Afrique, pay online, secure payment, PSP, Payment Service Provider en Afrique, ecommerce, ebusiness, startup,  paiement e-service, PDS, paiement sécurisé, gateway online, epayment gateway, epayment, mpayment, programme paydunya secure, entreprise en ligne, solution de paiement en ligne,  paiement marketplace, monnaie électronique en ligne, API, clic and pay, CnP, DmP, demande de paiement, TFA, transfert automatique, accepter paiement sur site web">
+  <meta name="description" content="Effectuez vos achats de biens et services sur Internet depuis votre t&eacute;l&eacute;phone mobile sur tous les sites acceptant PAYDUNYA.">
+  <meta property="og:image" content="https://app.paydunya.com/images/branding/logo_paydunya_128x128.png">
+  <meta property="og:url" content="https://app.paydunya.com/sandbox-api/v1/softpay/checkout/make-payment">
+  <meta property="fb:type" content="website">
+  <meta property="og:site_name" content="PAYDUNYA">
+  <meta property="og:title" content="Solution de paiement en ligne simple et s&eacute;curis&eacute;e">
+  <meta property="og:description" content="Effectuez vos achats de biens et services sur Internet depuis votre t&eacute;l&eacute;phone mobile sur tous les sites acceptant PAYDUNYA.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Solution de paiement en ligne simple et s&eacute;curis&eacute;e">
+  <meta name="twitter:description" content="Effectuez vos achats de biens et services sur Internet depuis votre t&eacute;l&eacute;phone mobile sur tous les sites acceptant PAYDUNYA.">
+  <meta name="twitter:image:src" content="https://app.paydunya.com/images/branding/logo_paydunya_128x128.png">
+  <meta name="twitter:site" content="@paydunya">
+  <meta name="twitter:creator" content="@paydunya">
+  <meta name="twitter:url" content="https://app.paydunya.com/sandbox-api/v1/softpay/checkout/make-payment">
+
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <!-- Vendor CSS Files -->
+  <link href="https://app.paydunya.com/css/404.css" rel="stylesheet">
+<body>
+
+  <section id="hero" class="d-flex align-items-center">
+
+    <div class="container d-flex flex-column align-items-center justify-content-center" data-aos="fade-up">
+      <img src="https://app.paydunya.com/svg/404.svg" class="img-fluid hero-img" alt="" data-aos="zoom-in" data-aos-delay="150">
+      <h3>Ooups, La page n&#039;a pas &eacute;t&eacute; trouv&eacute;e</h3>
+      <p>
+        Nous sommes vraiment d&eacute;sol&eacute;s pour ce d&eacute;sagr&eacute;ment. Il semble que vous 
+          essayez d&#039;acc&eacute;der &agrave; une page qui a &eacute;t&eacute; supprim&eacute;e ou qui n&#039;a jamais exist&eacute;.
+      </p>
+        <a href="https://app.paydunya.com" class="btn-get-started">Revenir à la page précédente</a>
+    </div>
+
+  </section>
+
+</body>
+
+</html>
+-----------------------------------
+[2025-12-11 03:41:54] ÉCHEC FINAL: Le paiement a été refusé ou la réponse API est invalide.
+-----------------------------------
+[2025-12-12 10:58:31] Nouvelle requête reçue.
+-----------------------------------
+[2025-12-12 10:58:31] Étape 1: Données reçues du formulaire
+DATA: Array
+(
+    [name] => test001
+    [phone_number] => +221781941351
+    [amount] => 1000
+)
+
+-----------------------------------
+[2025-12-12 10:58:31] Étape 2: Tentative de création de facture PayDunya...
+-----------------------------------
+[2025-12-12 10:58:31] Réponse PayDunya (Création Facture) - Code HTTP: 200
+DATA: Array
+(
+    [response_code] => 1001
+    [response_text] => The payin is not enabled
+)
+
+-----------------------------------
+[2025-12-12 10:58:31] Erreur: Impossible de créer la facture.
+-----------------------------------
+[2025-12-12 11:02:46] Nouvelle requête reçue.
+-----------------------------------
+[2025-12-12 11:02:46] Étape 1: Données reçues du formulaire
+DATA: Array
+(
+    [name] => test001
+    [phone_number] => +221781941351
+    [amount] => 1000
+)
+
+-----------------------------------
+[2025-12-12 11:02:46] Étape 2: Tentative de création de facture PayDunya...
+-----------------------------------
+[2025-12-12 11:02:47] Réponse PayDunya (Création Facture) - Code HTTP: 200
+DATA: Array
+(
+    [response_code] => 00
+    [response_text] => https://paydunya.com/checkout/invoice/ZtxLxPpAAC2hk8PZPBcw
+    [description] => Checkout Invoice Created.
+    [token] => ZtxLxPpAAC2hk8PZPBcw
+)
+
+-----------------------------------
+[2025-12-12 11:02:47] Étape 3: Tentative de paiement Softpay...
+-----------------------------------
+[2025-12-12 11:02:47] Réponse PayDunya (Paiement Softpay) - Code HTTP: 200
+DATA: Array
+(
+    [success] => 1
+    [message] => Rediriger vers cette URL pour completer le paiement.
+    [url] => https://pay.wave.com/c/cos-21qbkdw7g1nhw?a=1000&c=XOF&m=attic%20%2A%20DDP%20
+)
+
+-----------------------------------
+[2025-12-12 11:02:47] SUCCÈS FINAL: Paiement accepté.
+-----------------------------------
+[2025-12-12 11:03:24] Nouvelle requête reçue.
+-----------------------------------
+[2025-12-12 11:03:24] Étape 1: Données reçues du formulaire
+DATA: Array
+(
+    [name] => test001
+    [phone_number] => +221781941351
+    [amount] => 100
+)
+
+-----------------------------------
+[2025-12-12 11:03:24] Étape 2: Tentative de création de facture PayDunya...
+-----------------------------------
+[2025-12-12 11:03:24] Réponse PayDunya (Création Facture) - Code HTTP: 200
+DATA: Array
+(
+    [response_code] => 4003
+    [response_text] => Invalid Total Amount. Mimimum checkout amount is 200 FCFA.
+)
+
+-----------------------------------
+[2025-12-12 11:03:24] Erreur: Impossible de créer la facture.
+-----------------------------------
+[2025-12-12 11:03:36] Nouvelle requête reçue.
+-----------------------------------
+[2025-12-12 11:03:36] Étape 1: Données reçues du formulaire
+DATA: Array
+(
+    [name] => test001
+    [phone_number] => +221781941351
+    [amount] => 200
+)
+
+-----------------------------------
+[2025-12-12 11:03:36] Étape 2: Tentative de création de facture PayDunya...
+-----------------------------------
+[2025-12-12 11:03:37] Réponse PayDunya (Création Facture) - Code HTTP: 200
+DATA: Array
+(
+    [response_code] => 00
+    [response_text] => https://paydunya.com/checkout/invoice/ybqJETcGcHFJ9IjTK11G
+    [description] => Checkout Invoice Created.
+    [token] => ybqJETcGcHFJ9IjTK11G
+)
+
+-----------------------------------
+[2025-12-12 11:03:37] Étape 3: Tentative de paiement Softpay...
+-----------------------------------
+[2025-12-12 11:03:37] Réponse PayDunya (Paiement Softpay) - Code HTTP: 200
+DATA: Array
+(
+    [success] => 1
+    [message] => Rediriger vers cette URL pour completer le paiement.
+    [url] => https://pay.wave.com/c/cos-21qbkt3hg1ppm?a=200&c=XOF&m=attic%20%2A%20DDP%20
+)
+
+-----------------------------------
+[2025-12-12 11:03:37] SUCCÈS FINAL: Paiement accepté.
+-----------------------------------
+[2025-12-14 01:30:25] Nouvelle requête reçue.
+-----------------------------------
+[2025-12-14 01:30:25] Étape 1: Données reçues du formulaire
+DATA: Array
+(
+    [name] => test001
+    [phone_number] => +221781941351
+    [amount] => 200
+)
+
+-----------------------------------
+[2025-12-14 01:30:25] Étape 2: Tentative de création de facture PayDunya...
+-----------------------------------
+[2025-12-14 01:30:25] Réponse PayDunya (Création Facture) - Code HTTP: 200
+DATA: Array
+(
+    [response_code] => 00
+    [response_text] => https://paydunya.com/checkout/invoice/ez5XQI3GYZM0j689zOJT
+    [description] => Checkout Invoice Created.
+    [token] => ez5XQI3GYZM0j689zOJT
+)
+
+-----------------------------------
+[2025-12-14 01:30:25] Étape 3: Tentative de paiement Softpay...
+-----------------------------------
+[2025-12-14 01:30:25] Réponse PayDunya (Paiement Softpay) - Code HTTP: 200
+DATA: Array
+(
+    [success] => 1
+    [message] => Rediriger vers cette URL pour completer le paiement.
+    [url] => https://pay.wave.com/c/cos-21rcks7w01pd6?a=200&c=XOF&m=attic%20%2A%20DDP%20
+)
+
+-----------------------------------
+[2025-12-14 01:30:25] SUCCÈS FINAL: Paiement accepté.
+-----------------------------------
