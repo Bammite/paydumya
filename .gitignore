@@ -1,2 +1,4 @@
 .env
 .htaccess
+vendor/
+test/paiement_wave.php
