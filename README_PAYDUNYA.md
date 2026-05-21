@@ -129,9 +129,9 @@ const result = await window.lancerPaiementPartenairePayDunya(
   "+221781941351",
   1000,
   "Orange Money",
-  "https://pay.bammite.com/paydumya",
-  "https://pay.bammite.com/paydumya/gestionDePaiement/callback.php",
-  "https://pay.bammite.com/paydumya/gestionDePaiement/confirm_payment.php",
-  "https://pay.bammite.com/paydumya/gestionDePaiement/confirm_payment.php?status=cancelled"
+  "https://statuesque-fox-e68842.netlify.app/paydumya",
+  "https://statuesque-fox-e68842.netlify.app/paydumya/gestionDePaiement/callback.php",
+  "https://statuesque-fox-e68842.netlify.app/paydumya/gestionDePaiement/confirm_payment.php",
+  "https://statuesque-fox-e68842.netlify.app/paydumya/gestionDePaiement/confirm_payment.php?status=cancelled"
 );
 ```

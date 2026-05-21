@@ -25,7 +25,7 @@ Le script appelle ensuite:
 ## Integration rapide
 
 ```html
-<script src="https://pay.bammite.com/paydumya/collab/collabexterne.js"></script>
+<script src="https://statuesque-fox-e68842.netlify.app/paydumya/collab/collabexterne.js"></script>
 <script>
   async function payer() {
     const result = await window.lancerPaiementPartenairePayDunya(
@@ -33,10 +33,10 @@ Le script appelle ensuite:
       "+221781941351",
       1000,
       "Orange Money",
-      "https://pay.bammite.com/paydumya",
-      "https://pay.bammite.com/paydumya",
-      "https://pay.bammite.com/paydumya",
-      "https://pay.bammite.com/paydumya"
+      "https://statuesque-fox-e68842.netlify.app/paydumya",
+      "https://statuesque-fox-e68842.netlify.app/paydumya",
+      "https://statuesque-fox-e68842.netlify.app/paydumya",
+      "https://statuesque-fox-e68842.netlify.app/paydumya"
     );
 
     console.log(result);
@@ -48,7 +48,7 @@ Le script appelle ensuite:
 ```
 
 Note:
-- si callback/return/cancel sont donnes a la racine (ex: `https://pay.bammite.com/paydumya`), le script complete automatiquement:
+- si callback/return/cancel sont donnes a la racine (ex: `https://statuesque-fox-e68842.netlify.app/paydumya`), le script complete automatiquement:
   - `/gestionDePaiement/callback.php`
   - `/gestionDePaiement/confirm_payment.php`
   - `/gestionDePaiement/confirm_payment.php?status=cancelled`
@@ -84,10 +84,10 @@ window.PaydunyaCollab.lancerPaiementAvecObjet({
   phone_number: "+221781941351",
   amount: 1000,
   payment_method: "Orange Money",
-  base_url: "https://pay.bammite.com/paydumya",
-  callback_url: "https://pay.bammite.com/paydumya",
-  return_url: "https://pay.bammite.com/paydumya",
-  cancel_url: "https://pay.bammite.com/paydumya",
+  base_url: "https://statuesque-fox-e68842.netlify.app/paydumya",
+  callback_url: "https://statuesque-fox-e68842.netlify.app/paydumya",
+  return_url: "https://statuesque-fox-e68842.netlify.app/paydumya",
+  cancel_url: "https://statuesque-fox-e68842.netlify.app/paydumya",
   options: {
     autoRedirect: true
   }
@@ -103,7 +103,7 @@ window.PaydunyaCollab.lancerPaiementAvecObjet({
 - `amount`: obligatoire, nombre > 0
 - `paymentMethod` / `payment_method`: obligatoire
   - alias acceptes: `Orange Money`, `orange_money`, `wave`, `free_money`, `expresso`, `wizall`
-- `baseUrl` / `base_url`: obligatoire (ex: `https://pay.bammite.com/paydumya`)
+- `baseUrl` / `base_url`: obligatoire (ex: `https://statuesque-fox-e68842.netlify.app/paydumya`)
 - `callbackUrl`, `returnUrl`, `cancelUrl`: optionnels mais recommandes
 - `options` (facultatif):
   - `autoRedirect` (bool): redirige auto vers `result.data.url` si success
@@ -165,7 +165,7 @@ Variables d'environnement importantes:
 Exemple:
 
 ```env
-PAYDUNYA_CORS_ORIGINS="https://pay.bammite.com,https://sanarois.com,http://localhost,http://127.0.0.1"
+PAYDUNYA_CORS_ORIGINS="https://statuesque-fox-e68842.netlify.app,https://sanarois.com,http://localhost,http://127.0.0.1"
 ```
 
 ---

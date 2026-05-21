@@ -170,14 +170,14 @@ function paydunyaLoadConfig()
             'TOKEN' => '',
             'BASE_URL' => 'https://app.paydunya.com/api/v1',
             'CHECKOUT_URL' => 'https://app.paydunya.com/api/v1/checkout-invoice/create',
-            'PUBLIC_BASE_URL' => 'https://pay.bammite.com/paydumya',
+            'PUBLIC_BASE_URL' => 'https://statuesque-fox-e68842.netlify.app/paydumya',
             'CALLBACK_URL' => '',
             'RETURN_URL' => '',
             'CANCEL_URL' => '',
             'AUTH_KEYS' => '',
-            'ALLOWED_HOSTS' => 'sanarois.com,www.sanarois.com,pay.bammite.com,www.pay.bammite.com',
+            'ALLOWED_HOSTS' => 'sanarois.com,www.sanarois.com,pay.bammite.com,www.pay.bammite.com, www.statuesque-fox-e68842.netlify.app, statuesque-fox-e68842.netlify.app',
             'ENFORCE_HTTPS' => '1',
-            'PRIVILEGED_ALLOWED_HOSTS' => 'sanarois.com,www.sanarois.com,pay.bammite.com,www.pay.bammite.com',
+            'PRIVILEGED_ALLOWED_HOSTS' => 'sanarois.com,www.sanarois.com,pay.bammite.com,www.statuesque-fox-e68842.netlify.app, statuesque-fox-e68842.netlify.app',
             'PRIVILEGED_REQUIRE_HTTPS' => '1',
             'PRIVILEGED_METHODS' => '',
             'CORS_ORIGINS' => '',
@@ -217,7 +217,7 @@ function paydunyaConfigEnabled($value, $default = false)
     return in_array($normalized, ['1', 'true', 'yes', 'on'], true);
 }
 
-function paydunyaAllowedHostsFromConfig($value, $fallback = 'sanarois.com,www.sanarois.com,pay.bammite.com,www.pay.bammite.com')
+function paydunyaAllowedHostsFromConfig($value, $fallback = 'sanarois.com,www.sanarois.com,pay.bammite.com,www.statuesque-fox-e68842.netlify.app, statuesque-fox-e68842.netlify.app')
 {
     $source = trim((string) $value);
     if ($source === '') {
