@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test PayDunya</title>
+    <title>Test Partenaire PayDunya</title>
     <style>
         body { font-family: Arial, sans-serif; max-width: 720px; margin: 30px auto; padding: 0 16px; }
         form { border: 1px solid #ddd; border-radius: 8px; padding: 16px; }
@@ -14,7 +14,7 @@
     </style>
   </head>
 <body>
-    <h1>Test paiement PayDunya</h1>
+    <h1>Test Partenaire PayDunya</h1>
     <p>Formats acceptes pour le Senegal: <code>781234567</code> ou <code>+221781234567</code>.</p>
     <form id="paymentForm" method="post">
         <label for="nom">Votre nom</label>
@@ -36,16 +36,18 @@
         </select>
 
         <label for="base_url">Base URL</label>
-        <input type="text" name="base_url" value="https://sanarois.com/paydumya">
+        <input type="text" name="base_url" value="https://pay.bammite.com/paydumya">
 
         <label for="callback_url">Callback URL</label>
-        <input type="text" name="callback_url" value="https://sanarois.com/paydumya/gestionDePaiement/callback.php">
+        <input type="text" name="callback_url" value="https://pay.bammite.com/paydumya">
 
         <label for="return_url">Return URL</label>
-        <input type="text" name="return_url" value="https://sanarois.com/paydumya/gestionDePaiement/confirm_payment.php">
+        <input type="text" name="return_url" value="https://pay.bammite.com/paydumya">
 
         <label for="cancel_url">Cancel URL</label>
-        <input type="text" name="cancel_url" value="https://sanarois.com/paydumya/gestionDePaiement/confirm_payment.php?status=cancelled">
+        <input type="text" name="cancel_url" value="https://pay.bammite.com/paydumya">
+
+        
 
         <button type="submit">PayDunya Test Payment</button>
     </form>

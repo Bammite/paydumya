@@ -4,7 +4,7 @@ define('PAYDUNYA_LOG_FILE', __DIR__ . '/debug_log.txt');
 
 function paydunyaProjectRoot()
 {
-    return dirname(__DIR__, 2);
+    return dirname(__DIR__);
 }
 
 function paydunyaWriteLog($message, $data = null)
@@ -163,6 +163,20 @@ function paydunyaLoadConfig()
         return is_string($value) && trim($value) !== '';
     };
 
+    $databaseAllowedHosts = '';
+    $allowedHostDefaults = 'sanarois.com,www.sanarois.com,pay.bammite.com,www.pay.bammite.com, www.statuesque-fox-e68842.netlify.app, statuesque-fox-e68842.netlify.app';
+    $databaseFile = __DIR__ . '/paydunya_domain_registry.php';
+
+    if (is_file($databaseFile)) {
+        require_once $databaseFile;
+        if (function_exists('paydunyaDomainRegistryFetchAuthorizedHosts')) {
+            $hostsFromDb = paydunyaDomainRegistryFetchAuthorizedHosts(['actif' => true, 'allow_actions' => true]);
+            if (!empty($hostsFromDb)) {
+                $databaseAllowedHosts = implode(',', $hostsFromDb);
+            }
+        }
+    }
+
     $config = array_merge(
         [
             'MASTER_KEY' => '',
@@ -175,9 +189,9 @@ function paydunyaLoadConfig()
             'RETURN_URL' => '',
             'CANCEL_URL' => '',
             'AUTH_KEYS' => '',
-            'ALLOWED_HOSTS' => 'sanarois.com,www.sanarois.com,pay.bammite.com,www.pay.bammite.com, www.statuesque-fox-e68842.netlify.app, statuesque-fox-e68842.netlify.app',
+            'ALLOWED_HOSTS' => $databaseAllowedHosts ?: $allowedHostDefaults,
             'ENFORCE_HTTPS' => '1',
-            'PRIVILEGED_ALLOWED_HOSTS' => 'sanarois.com,www.sanarois.com,pay.bammite.com,www.statuesque-fox-e68842.netlify.app, statuesque-fox-e68842.netlify.app',
+            'PRIVILEGED_ALLOWED_HOSTS' => $databaseAllowedHosts ?: $allowedHostDefaults,
             'PRIVILEGED_REQUIRE_HTTPS' => '1',
             'PRIVILEGED_METHODS' => '',
             'CORS_ORIGINS' => '',
@@ -229,6 +243,38 @@ function paydunyaAllowedHostsFromConfig($value, $fallback = 'sanarois.com,www.sa
     }, explode(',', $source)));
 
     return array_values(array_unique($hosts));
+}
+
+function paydunyaAllowedHostsFromDatabase()
+{
+    static $initialized = false;
+    static $hosts = [];
+
+    if ($initialized) {
+        return $hosts;
+    }
+
+    $initialized = true;
+
+    try {
+        require paydunyaProjectRoot() . '/controller/connexion.php';
+        if (!isset($connexion) || !($connexion instanceof PDO)) {
+            return [];
+        }
+
+        $stmt = $connexion->query("SELECT domaine FROM domaine_autorise WHERE actif = 1 AND allow_actions = 1");
+        $result = $stmt->fetchAll(PDO::FETCH_COLUMN);
+
+        $hosts = array_values(array_unique(array_filter(array_map(function ($value) {
+            return strtolower(trim((string) $value));
+        }, $result))));
+    } catch (Throwable $e) {
+        paydunyaWriteLog('Impossible de charger les domaines depuis la base.', [
+            'message' => $e->getMessage(),
+        ]);
+    }
+
+    return $hosts;
 }
 
 function paydunyaHostIsAllowed($host, array $allowedHosts)
@@ -515,6 +561,7 @@ function paydunyaDefaultActions(array $overrides = [])
     $config = paydunyaLoadConfig();
     $baseUrl = paydunyaCurrentBaseUrl();
     $allowedHosts = paydunyaAllowedHostsFromConfig($config['ALLOWED_HOSTS'] ?? '');
+    $allowedHosts = array_values(array_unique(array_merge($allowedHosts, paydunyaAllowedHostsFromDatabase())));
     $requireHttps = paydunyaConfigEnabled($config['ENFORCE_HTTPS'] ?? '1', true);
 
     $defaultActions = [

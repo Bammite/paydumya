@@ -1670,3 +1670,117 @@ DATA: Array
 )
 
 -----------------------------------
+[2026-05-21 21:20:06] Configuration PayDunya chargée
+DATA: Array
+(
+    [MASTER_KEY] => ******
+    [PRIVATE_KEY] => ******
+    [TOKEN] => ******
+    [BASE_URL] => https://app.paydunya.com/api/v1
+    [CHECKOUT_URL] => https://app.paydunya.com/api/v1/checkout-invoice/create
+    [PUBLIC_BASE_URL] => https://sanarois.com/paydumya
+    [CALLBACK_URL] => https://sanarois.com/paydumya/gestionDePaiement/callback.php
+    [RETURN_URL] => https://sanarois.com/paydumya/gestionDePaiement/confirm_payment.php
+    [CANCEL_URL] => https://sanarois.com/paydumya/gestionDePaiement/confirm_payment.php?status=cancelled
+)
+
+-----------------------------------
+[2026-05-21 21:20:06] Appel API PayDunya
+DATA: Array
+(
+    [url] => https://app.paydunya.com/api/v1/checkout-invoice/create
+    [payload] => Array
+        (
+            [invoice] => Array
+                (
+                    [total_amount] => 1000
+                    [description] => Paiement initié via endpoint simplifié
+                )
+
+            [store] => Array
+                (
+                    [name] => Sanarois Fast-Food
+                )
+
+            [actions] => Array
+                (
+                    [callback_url] => https://pay.bammite.com/paydumya/gestionDePaiement/callback.php
+                    [return_url] => https://pay.bammite.com/paydumya/gestionDePaiement/confirm_payment.php
+                    [cancel_url] => https://pay.bammite.com/paydumya/gestionDePaiement/confirm_payment.php?status=cancelled
+                )
+
+        )
+
+)
+
+-----------------------------------
+[2026-05-21 21:20:06] Réponse API PayDunya
+DATA: Array
+(
+    [url] => https://app.paydunya.com/api/v1/checkout-invoice/create
+    [http_code] => 200
+    [content_type] => application/json
+    [response] => Array
+        (
+            [response_code] => 00
+            [response_text] => https://paydunya.com/checkout/invoice/iMMibLoqfRAT3mWM4Pb8
+            [description] => Checkout Invoice Created.
+            [token] => iMMibLoqfRAT3mWM4Pb8
+        )
+
+)
+
+-----------------------------------
+[2026-05-21 21:20:06] Appel API PayDunya
+DATA: Array
+(
+    [url] => https://app.paydunya.com/api/v1/softpay/new-orange-money-senegal
+    [payload] => Array
+        (
+            [customer_name] => test001
+            [customer_email] => client@sanarois.com
+            [phone_number] => 781941351
+            [invoice_token] => iMMibLoqfRAT3mWM4Pb8
+            [total_amount] => 1000
+        )
+
+)
+
+-----------------------------------
+[2026-05-21 21:20:08] Réponse API PayDunya
+DATA: Array
+(
+    [url] => https://app.paydunya.com/api/v1/softpay/new-orange-money-senegal
+    [http_code] => 200
+    [content_type] => application/json
+    [response] => Array
+        (
+            [success] => 1
+            [message] => Rediriger vers cette URL pour completer le paiement.
+            [url] => https://app.paydunya.com/orange-money?data%5Bqrcode%5D=iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAAAAACIM%2FFCAAAAAklEQVR4nGKkkSsAAAH4SURBVO3QQZLCQAxD0dz%2F0jMHcKTICRQGf62o4Hbr9fH3Izk%2BXeBVATItQKYFyLQAmRYg0%2FKjkCPOySbx3f9bv9%2FsAAQIkMUQVcZf7Se7kG4HIMkpIEAeLhkOOUqSer5wMt%2FtAAQIECDdJUmZ5BGAAAEC5LMQvyHZDwQIECA5REXN5PXaJZMOQIAAWQxJUhe%2B9nfeAQgQIJsh3dSFT2o%2Fq%2FLsNBAgssqz00DeDDlK1HdfwM8k%2B9VOIECAAPFHulVzbBd%2BgQICBMhKiCL42kmZOnOPIzcAAQJkPcRfrQjq0nw%2B6VMfAQgQIDshqob%2F7st0z%2Fry8hYgQICshKjyqlgCT7A5RLYCAgQIkKB2jvWpELVfNQQCBMhOSM7Jgd09arOaBAIEyGaIqlFzssoWy7Hd5wICBMhmiC%2BmrsixCdDfIvcAAQJkJaQOJ0vUKfXv%2BWNd%2Fav2AwECZDPkYji4Itngn%2BjmUwABAmQlxJfxV%2Fgy6hZ1ym8AAgQIkHvJmapeTr4AAgECZCWkDqs8qaduzB8HCBAgQOoSf3VyUbdewtS1gAABsh2SV1Lz9wqrs34DECBAgLyjTPKl2wcIECBAckhew8%2F7yWQeCBAgQFRyrJ%2F0j5PcDgQIECDquqSAIvh%2F1eZkHggQIEC%2BOECmBci0AJkWINMCZFqATMs%2FVuiWk2iNiSoAAAAASUVORK5CYII%3D&data%5Btoken%5D=b1864625915832ded2d7da3c361e439824e062068e1ee0
+            [other_url] => Array
+                (
+                    [om_url] => https://sugu.orange-sonatel.com/mp/dmeGdaRch0zqh5GHf6OL
+                    [maxit_url] => https://sugu.orange-sonatel.com/mp/dmeGdaRch0zqh5GHf6OL
+                )
+
+        )
+
+)
+
+-----------------------------------
+[2026-05-21 22:12:29] Configuration PayDunya chargée
+DATA: Array
+(
+    [MASTER_KEY] => ******
+    [PRIVATE_KEY] => ******
+    [TOKEN] => ******
+    [BASE_URL] => https://app.paydunya.com/api/v1
+    [CHECKOUT_URL] => https://app.paydunya.com/api/v1/checkout-invoice/create
+    [PUBLIC_BASE_URL] => https://statuesque-fox-e68842.netlify.app/paydumya
+    [CALLBACK_URL] => 
+    [RETURN_URL] => 
+    [CANCEL_URL] => 
+)
+
+-----------------------------------

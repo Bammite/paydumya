@@ -54,8 +54,35 @@
     return ["wave", "orange_money", "free_money", "expresso", "wizall"].includes(method);
   }
 
+  function isOriginOnly(urlValue) {
+    const value = String(urlValue || "").trim();
+    if (!value) return false;
+    try {
+      const parsed = new URL(value);
+      return parsed.pathname === "/" || parsed.pathname === "";
+    } catch (error) {
+      return false;
+    }
+  }
+
+  function inferBaseUrlFromLocation(candidate) {
+    if (typeof window === "undefined" || !window.location) {
+      return String(candidate || "").trim();
+    }
+
+    const provided = String(candidate || "").trim();
+    if (provided && !isOriginOnly(provided)) {
+      return normalizeBaseUrl(provided);
+    }
+
+    const origin = window.location.origin;
+    const path = String(window.location.pathname || "").replace(/\/test\/.*$/, "");
+    const cleaned = path.replace(/\/+$/, "");
+    return origin + (cleaned === "" ? "" : cleaned);
+  }
+
   function resolveUrls(baseUrl, callbackUrl, returnUrl, cancelUrl) {
-    const resolvedBaseUrl = normalizeBaseUrl(baseUrl);
+    const resolvedBaseUrl = inferBaseUrlFromLocation(baseUrl);
 
     const callbackCandidate = String(callbackUrl || "").trim();
     const returnCandidate = String(returnUrl || "").trim();
@@ -72,11 +99,11 @@
       : joinUrl(resolvedBaseUrl, "gestionDePaiement/confirm_payment.php?status=cancelled");
 
     return {
-      baseUrl: resolvedBaseUrl,
+      baseUrl: normalizeBaseUrl(resolvedBaseUrl),
       callbackUrl: callback,
       returnUrl: returnUrlResolved,
       cancelUrl: cancelUrlResolved,
-      endpoint: joinUrl(resolvedBaseUrl, "gestionDePaiement/simple_payment.php"),
+      endpoint: joinUrl(normalizeBaseUrl(resolvedBaseUrl), "gestionDePaiement/simple_payment.php"),
     };
   }
 

@@ -55,7 +55,8 @@ Ce sous-domaine contient maintenant une base API PayDunya plus complète.
 
 1. Définir les clés PayDunya uniquement via variables d'environnement (`PAYDUNYA_MASTER_KEY`, `PAYDUNYA_PRIVATE_KEY`, `PAYDUNYA_TOKEN`).
 2. Exécuter `commandes_en_attente.sql` dans la base.
-3. Exposer publiquement les URLs suivantes :
+3. Exécuter `sql/collab_partenaires_schema.sql` pour activer la gestion partenaires via base (domaines, méthodes, logs, transactions).
+4. Exposer publiquement les URLs suivantes :
    - `/paydumya/gestionDePaiement/callback.php`
    - `/paydumya/gestionDePaiement/confirm_payment.php`
 

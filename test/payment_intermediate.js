@@ -66,6 +66,7 @@
     const callbackUrl = (formData.get("callback_url") || "").toString().trim();
     const returnUrl = (formData.get("return_url") || "").toString().trim();
     const cancelUrl = (formData.get("cancel_url") || "").toString().trim();
+    const partnerKey = (formData.get("partner_key") || "").toString().trim();
 
     const phoneForApi = isSnMethod(method) ? normalizeSnPhone(rawPhone) : cleanPhone(rawPhone);
 
@@ -118,6 +119,9 @@
         {
           description: `Test ${method} - ${customerName}`,
           throwOnFailure: false,
+          fetchOptions: partnerKey
+            ? { headers: { "X-PAYDUNYA-PARTNER-KEY": partnerKey } }
+            : {},
         }
       );
 

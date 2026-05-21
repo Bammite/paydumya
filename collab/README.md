@@ -152,6 +152,7 @@ Verifier que ces fichiers existent et sont accessibles:
 - `/paydumya/gestionDePaiement/simple_payment.php`
 - `/paydumya/gestionDePaiement/callback.php`
 - `/paydumya/gestionDePaiement/confirm_payment.php`
+- `/paydumya/sql/collab_partenaires_schema.sql` (migration SQL partenaires)
 
 Variables d'environnement importantes:
 - `PAYDUNYA_MASTER_KEY`
@@ -161,6 +162,18 @@ Variables d'environnement importantes:
 - `PAYDUNYA_CHECKOUT_ENDPOINT`
 - `PAYDUNYA_CORS_ORIGINS`
 - `PAYDUNYA_ALLOWED_HOSTS`
+
+Migration SQL obligatoire:
+1. importer `commandes_en_attente.sql` (si pas déjà fait)
+2. importer `sql/collab_partenaires_schema.sql`
+3. ajouter/modifier les domaines dans `domaine_autorise`
+4. activer les méthodes dans `partenaire_methode_paiement`
+
+Tables utilisées (mapping demandé):
+- `transaction` -> `transaction_paiement`
+- `domaineAutorisé` -> `domaine_autorise`
+- `log` -> `journal_api`
+- `méthodePaiement` -> `methode_paiement`
 
 Exemple:
 

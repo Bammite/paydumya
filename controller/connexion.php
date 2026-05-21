@@ -1,9 +1,9 @@
 <?php 
 // Inclure l'autoloader de Composer pour charger les dépendances
-require_once __DIR__ . '/../../vendor/autoload.php';
+require_once __DIR__ . '/../vendor/autoload.php';
 
 // Charger les variables d'environnement depuis le fichier .env à la racine du projet
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/.env');
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/..');
 $dotenv->load();
 
 // Récupérer les identifiants de la base de données depuis les variables d'environnement
