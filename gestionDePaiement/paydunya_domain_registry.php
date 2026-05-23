@@ -190,7 +190,9 @@ function paydunyaDomainRegistryUpsertAuthorizedDomain(array $data)
                  WHERE id = :id'
             );
             $values[':id'] = (int) $existing['id'];
-            $stmt->execute($values);
+            $updateValues = $values;
+            unset($updateValues[':domaine']);
+            $stmt->execute($updateValues);
             return (int) $existing['id'];
         }
 
